@@ -13,7 +13,7 @@ export function Logo({ size = 'md', className = '' }: LogoProps) {
   const { svg, text } = sizeMap[size];
 
   return (
-    <span className={`inline-flex items-center gap-2 ${className}`} aria-label="ConvertFlow">
+    <span className={`inline-flex items-center gap-2 ${className}`} aria-label="FlowToPDF">
       <svg
         width={svg}
         height={svg}
@@ -70,7 +70,7 @@ export function Logo({ size = 'md', className = '' }: LogoProps) {
         </defs>
       </svg>
       <span className={`font-bold ${text} bg-gradient-to-r from-primary-500 to-violet-600 bg-clip-text text-transparent`}>
-        ConvertFlow
+        FlowToPDF
       </span>
     </span>
   );

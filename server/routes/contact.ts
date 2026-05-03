@@ -33,7 +33,7 @@ contactRouter.post('/', (req, res) => {
   // TODO: In production, send email using your preferred service:
   //   import { Resend } from 'resend';
   //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({ from: 'noreply@convertflow.app', to: process.env.CONTACT_EMAIL, ... });
+  //   await resend.emails.send({ from: 'noreply@flowtopdf.com', to: process.env.CONTACT_EMAIL, ... });
   //
   // For now we simulate success:
   void Promise.resolve({ name, subject, message }); // prevent unused-var lint error

@@ -79,7 +79,7 @@ export default function TermsPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contact</h2>
-                <p>Questions? Email <a href="mailto:support@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">support@convertflow.app</a></p>
+                <p>Questions? Email <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
               </section>
             </>
           ) : (
@@ -126,7 +126,7 @@ export default function TermsPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contacto</h2>
-                <p>¿Preguntas? Escríbenos a <a href="mailto:support@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">support@convertflow.app</a></p>
+                <p>¿Preguntas? Escríbenos a <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
               </section>
             </>
           )}

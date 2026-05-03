@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contact</h2>
-                <p>Questions about this policy? Email us at <a href="mailto:privacy@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">privacy@convertflow.app</a>.</p>
+                <p>Questions about this policy? Email us at <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a>.</p>
               </section>
             </>
           ) : (
@@ -151,7 +151,7 @@ export default function PrivacyPolicyPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contacto</h2>
-                <p>¿Preguntas sobre esta política? Escríbenos a <a href="mailto:privacy@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">privacy@convertflow.app</a>.</p>
+                <p>¿Preguntas sobre esta política? Escríbenos a <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a>.</p>
               </section>
             </>
           )}

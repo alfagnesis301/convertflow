@@ -12,7 +12,7 @@ interface FormState {
   message: string;
 }
 
-const SUPPORT_EMAIL = import.meta.env.VITE_SUPPORT_EMAIL ?? 'support@convertflow.app';
+const SUPPORT_EMAIL = import.meta.env.VITE_SUPPORT_EMAIL ?? 'support@flowtopdf.com';
 
 export default function ContactPage() {
   const { lang } = useTranslation();

@@ -66,7 +66,7 @@ export default function DisclaimerPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contact</h2>
-                <p>Questions about this disclaimer? Contact us at <a href="mailto:support@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">support@convertflow.app</a></p>
+                <p>Questions about this disclaimer? Contact us at <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
               </section>
             </>
           ) : (
@@ -89,7 +89,7 @@ export default function DisclaimerPage() {
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Contacto</h2>
-                <p>¿Preguntas sobre este aviso legal? Contáctanos en <a href="mailto:support@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">support@convertflow.app</a></p>
+                <p>¿Preguntas sobre este aviso legal? Contáctanos en <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
               </section>
             </>
           )}

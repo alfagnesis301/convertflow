@@ -41,7 +41,7 @@ export default function DMCAPage() {
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Filing a Takedown Request</h2>
                 <p>If you have a legitimate copyright concern, please send a written notice to:</p>
                 <div className="mt-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 text-sm">
-                  <p><strong>Email:</strong> <a href="mailto:dmca@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">dmca@convertflow.app</a></p>
+                  <p><strong>Email:</strong> <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
                 </div>
                 <p className="mt-4">Your notice should include:</p>
                 <ul className="list-disc ml-6 space-y-1 mt-2">
@@ -75,7 +75,7 @@ export default function DMCAPage() {
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Presentar una solicitud de eliminación</h2>
                 <p>Si tienes una preocupación legítima sobre derechos de autor, envía un aviso escrito a:</p>
                 <div className="mt-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 text-sm">
-                  <p><strong>Email:</strong> <a href="mailto:dmca@convertflow.app" className="text-primary-600 dark:text-primary-400 underline">dmca@convertflow.app</a></p>
+                  <p><strong>Email:</strong> <a href="mailto:support@flowtopdf.com" className="text-primary-600 dark:text-primary-400 underline">support@flowtopdf.com</a></p>
                 </div>
                 <p className="mt-4">Tu aviso debe incluir: tu información de contacto, descripción de la obra protegida, descripción de dónde crees que se encuentra el material infractor, una declaración de buena fe y tu firma electrónica o física.</p>
               </section>
