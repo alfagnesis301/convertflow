@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '../lib/i18n';
+import { useTranslation, tRaw } from '../lib/i18n';
 import { tools, categories } from '../lib/toolsConfig';
 import { generateMetaTags } from '../lib/seo';
 import SEOHead from '../components/SEOHead';
@@ -97,7 +97,7 @@ export default function HomePage() {
     .map((id) => tools.find((tool) => tool.id === id))
     .filter((t): t is NonNullable<typeof t> => t !== undefined);
 
-  const faqItems = (t('home.faqItems') as unknown as { q: string; a: string }[]) ?? [];
+  const faqItems = tRaw<{ q: string; a: string }[]>('home.faqItems', lang) ?? [];
   const faqs = faqItems.map((item) => ({ question: item.q, answer: item.a }));
 
   const posts = lang === 'en' ? blogPostsEn.slice(0, 3) : blogPostsEs.slice(0, 3);

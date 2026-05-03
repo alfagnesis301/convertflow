@@ -41,6 +41,33 @@ function resolve(obj: Record<string, unknown>, key: string): string {
 }
 
 /**
+ * Resolve a key path returning the raw value (string, array, object, etc.).
+ * Use this when the translation entry is not a plain string (e.g. FAQ arrays).
+ */
+function resolveRaw(obj: Record<string, unknown>, key: string): unknown {
+  const parts = key.split('.');
+  let current: unknown = obj;
+  for (const part of parts) {
+    if (current === null || typeof current !== 'object') return undefined;
+    current = (current as Record<string, unknown>)[part];
+  }
+  return current;
+}
+
+/**
+ * Get the raw translation value (array, object, etc.) for a given key.
+ * Falls back to English if the key is missing in the requested language.
+ */
+export function tRaw<T = unknown>(key: string, lang: Lang = getCurrentLang()): T | undefined {
+  const dict = staticTranslations[lang] ?? staticTranslations['en'];
+  let value = resolveRaw(dict, key);
+  if (value === undefined && lang !== 'en') {
+    value = resolveRaw(staticTranslations['en'], key);
+  }
+  return value as T | undefined;
+}
+
+/**
  * Translate a dot-separated key with optional interpolation variables.
  *
  * @example
