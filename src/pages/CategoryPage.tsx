@@ -18,44 +18,44 @@ const categoryMeta: Record<ToolCategory, {
   'pdf-converter': {
     pageId: 'home',
     en: {
-      title: 'PDF Converter Tools – Free Online | ConvertFlow',
+      title: 'PDF Converter Tools – Free Online | FlowToPDF',
       desc: 'Free online PDF converter tools. Convert PDF to Word, JPG, PNG, text, HTML, and more. No registration required.',
     },
     es: {
-      title: 'Herramientas Convertidor PDF – Gratis Online | ConvertFlow',
+      title: 'Herramientas Convertidor PDF – Gratis Online | FlowToPDF',
       desc: 'Herramientas convertidor PDF gratuitas. Convierte PDF a Word, JPG, PNG, texto, HTML y más. Sin registro.',
     },
   },
   'image-to-pdf': {
     pageId: 'home',
     en: {
-      title: 'Image to PDF Converter – Free Online | ConvertFlow',
+      title: 'Image to PDF Converter – Free Online | FlowToPDF',
       desc: 'Convert JPG, PNG, WebP, GIF, and SVG images to PDF online for free. Batch convert multiple images.',
     },
     es: {
-      title: 'Convertir Imagen a PDF – Gratis Online | ConvertFlow',
+      title: 'Convertir Imagen a PDF – Gratis Online | FlowToPDF',
       desc: 'Convierte imágenes JPG, PNG, WebP, GIF y SVG a PDF gratis online. Convierte varias imágenes a la vez.',
     },
   },
   'pdf-tools': {
     pageId: 'home',
     en: {
-      title: 'PDF Tools – Merge, Split, Compress & More | ConvertFlow',
+      title: 'PDF Tools – Merge, Split, Compress & More | FlowToPDF',
       desc: 'Free PDF tools: merge, split, compress, rotate, protect, unlock, reorder, extract pages, and OCR.',
     },
     es: {
-      title: 'Herramientas PDF – Unir, Dividir, Comprimir y Más | ConvertFlow',
+      title: 'Herramientas PDF – Unir, Dividir, Comprimir y Más | FlowToPDF',
       desc: 'Herramientas PDF gratuitas: unir, dividir, comprimir, rotar, proteger, desbloquear, reordenar y más.',
     },
   },
   'office-to-pdf': {
     pageId: 'home',
     en: {
-      title: 'Office to PDF Converter – Free Online | ConvertFlow',
+      title: 'Office to PDF Converter – Free Online | FlowToPDF',
       desc: 'Convert Word, Excel, PowerPoint, ODT, and RTF files to PDF online for free.',
     },
     es: {
-      title: 'Convertir Office a PDF – Gratis Online | ConvertFlow',
+      title: 'Convertir Office a PDF – Gratis Online | FlowToPDF',
       desc: 'Convierte Word, Excel, PowerPoint, ODT y archivos RTF a PDF gratis online.',
     },
   },

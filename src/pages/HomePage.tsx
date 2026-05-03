@@ -127,7 +127,7 @@ export default function HomePage() {
     { icon: CheckCircle, title: lang === 'en' ? '100% Free' : '100% Gratis', desc: lang === 'en' ? 'All core tools are free, with no hidden fees or watermarks.' : 'Todas las herramientas son gratuitas, sin tarifas ocultas ni marcas de agua.' },
     { icon: CheckCircle, title: lang === 'en' ? 'Privacy First' : 'Privacidad ante todo', desc: lang === 'en' ? 'Files are deleted automatically. We never read or share your documents.' : 'Los archivos se eliminan automáticamente. Nunca leemos ni compartimos tus documentos.' },
     { icon: CheckCircle, title: lang === 'en' ? 'No Account Needed' : 'Sin cuenta necesaria', desc: lang === 'en' ? 'Just upload, convert, and download. No sign-up, ever.' : 'Solo sube, convierte y descarga. Sin registro.' },
-    { icon: CheckCircle, title: lang === 'en' ? 'Works Everywhere' : 'Funciona en todas partes', desc: lang === 'en' ? 'Use ConvertFlow on any device — desktop, tablet, or mobile.' : 'Usa ConvertFlow en cualquier dispositivo — escritorio, tablet o móvil.' },
+    { icon: CheckCircle, title: lang === 'en' ? 'Works Everywhere' : 'Funciona en todas partes', desc: lang === 'en' ? 'Use FlowToPDF on any device — desktop, tablet, or mobile.' : 'Usa FlowToPDF en cualquier dispositivo — escritorio, tablet o móvil.' },
   ];
 
   return (
@@ -280,7 +280,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Why ConvertFlow */}
+        {/* Why FlowToPDF */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-10 text-center">
             {t('home.whyUs')}
@@ -335,8 +335,8 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-8">
             {lang === 'en'
-              ? 'Join thousands of users who convert their files with ConvertFlow every day.'
-              : 'Únete a miles de usuarios que convierten sus archivos con ConvertFlow cada día.'}
+              ? 'Join thousands of users who convert their files with FlowToPDF every day.'
+              : 'Únete a miles de usuarios que convierten sus archivos con FlowToPDF cada día.'}
           </p>
           <Link to={lang === 'en' ? '/en/pdf-tools' : '/es/herramientas-pdf'} className="btn-primary text-base px-8 py-4">
             {t('home.heroCtaMain')}

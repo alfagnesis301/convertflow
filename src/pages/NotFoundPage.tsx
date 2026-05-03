@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   const meta = generateMetaTags('home', lang); // fallback to home meta
 
   const title404 =
-    lang === 'en' ? '404 – Page Not Found | ConvertFlow' : '404 – Página no encontrada | ConvertFlow';
+    lang === 'en' ? '404 – Page Not Found | FlowToPDF' : '404 – Página no encontrada | FlowToPDF';
 
   return (
     <>

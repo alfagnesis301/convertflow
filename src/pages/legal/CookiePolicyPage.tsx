@@ -10,10 +10,10 @@ export default function CookiePolicyPage() {
 
   const cookieMeta = {
     ...meta,
-    title: isEn ? 'Cookie Policy | ConvertFlow' : 'Política de Cookies | ConvertFlow',
+    title: isEn ? 'Cookie Policy | FlowToPDF' : 'Política de Cookies | FlowToPDF',
     description: isEn
-      ? 'Learn about the cookies ConvertFlow uses and how to manage them.'
-      : 'Conoce las cookies que usa ConvertFlow y cómo gestionarlas.',
+      ? 'Learn about the cookies FlowToPDF uses and how to manage them.'
+      : 'Conoce las cookies que usa FlowToPDF y cómo gestionarlas.',
   };
 
   return (

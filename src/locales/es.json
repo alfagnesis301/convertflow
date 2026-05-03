@@ -43,17 +43,17 @@
       { "step": "2", "title": "Convierte al instante", "desc": "Nuestro servidor procesa tu archivo en segundos usando bibliotecas de código abierto." },
       { "step": "3", "title": "Descarga el resultado", "desc": "Tu archivo convertido estará listo para descargar. Los archivos se eliminan a los 30 minutos." }
     ],
-    "whyUs": "¿Por qué elegir ConvertFlow?",
+    "whyUs": "¿Por qué elegir FlowToPDF?",
     "whyUsPoints": [
       { "title": "100% gratuito", "desc": "Todas las herramientas principales son gratis, sin costes ocultos ni marcas de agua." },
       { "title": "Tu privacidad primero", "desc": "Los archivos se eliminan automáticamente. Nunca leemos ni compartimos tus documentos." },
       { "title": "Sin registro", "desc": "Solo sube, convierte y descarga. Sin cuentas, sin complicaciones." },
-      { "title": "Funciona en cualquier dispositivo", "desc": "Usa ConvertFlow desde tu ordenador, tablet o móvil sin instalar nada." }
+      { "title": "Funciona en cualquier dispositivo", "desc": "Usa FlowToPDF desde tu ordenador, tablet o móvil sin instalar nada." }
     ],
     "faq": "Preguntas frecuentes",
     "faqItems": [
       {
-        "q": "¿ConvertFlow es realmente gratuito?",
+        "q": "¿FlowToPDF es realmente gratuito?",
         "a": "Sí. Todas las herramientas son gratuitas. Mostramos publicidad para cubrir los costes del servidor, pero las conversiones siempre son gratis."
       },
       {
@@ -66,7 +66,7 @@
       },
       {
         "q": "¿Necesito instalar algo?",
-        "a": "No. ConvertFlow funciona directamente en tu navegador. No es necesario instalar ningún programa."
+        "a": "No. FlowToPDF funciona directamente en tu navegador. No es necesario instalar ningún programa."
       },
       {
         "q": "¿Qué formatos están disponibles?",
@@ -166,10 +166,10 @@
       "en": "English",
       "es": "Español"
     },
-    "copyright": "© {{year}} ConvertFlow. Todos los derechos reservados."
+    "copyright": "© {{year}} FlowToPDF. Todos los derechos reservados."
   },
   "blog": {
-    "title": "Blog de ConvertFlow",
+    "title": "Blog de FlowToPDF",
     "subtitle": "Guías, consejos y novedades sobre herramientas PDF y conversión de documentos.",
     "readMore": "Leer más",
     "byAuthor": "Por {{author}}",

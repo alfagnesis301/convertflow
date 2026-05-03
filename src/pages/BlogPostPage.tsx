@@ -44,7 +44,7 @@ export default function BlogPostPage() {
   const meta = generateMetaTags('blog', lang);
   const postMeta = {
     ...meta,
-    title: `${post.title} | ConvertFlow Blog`,
+    title: `${post.title} | FlowToPDF Blog`,
     description: post.excerpt,
     ogTitle: post.title,
     ogDescription: post.excerpt,
@@ -65,9 +65,9 @@ export default function BlogPostPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumbs
           overrides={[
-            { name: 'ConvertFlow', url: `https://convertflow.app/${lang}/` },
-            { name: t('nav.blog'), url: `https://convertflow.app/${lang}/blog` },
-            { name: post.title, url: `https://convertflow.app/${lang}/blog/${post.slug}` },
+            { name: 'FlowToPDF', url: `https://FlowToPDF.app/${lang}/` },
+            { name: t('nav.blog'), url: `https://FlowToPDF.app/${lang}/blog` },
+            { name: post.title, url: `https://FlowToPDF.app/${lang}/blog/${post.slug}` },
           ]}
         />
 

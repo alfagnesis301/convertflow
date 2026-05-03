@@ -43,17 +43,17 @@
       { "step": "2", "title": "Convert instantly", "desc": "Our server processes your file in seconds using trusted open-source libraries." },
       { "step": "3", "title": "Download the result", "desc": "Your converted file is ready to download. Files are deleted after 30 minutes." }
     ],
-    "whyUs": "Why Choose ConvertFlow?",
+    "whyUs": "Why Choose FlowToPDF?",
     "whyUsPoints": [
       { "title": "100% Free", "desc": "All core tools are free, with no hidden fees or watermarks." },
       { "title": "Privacy First", "desc": "Files are deleted automatically. We never read or share your documents." },
       { "title": "No Account Needed", "desc": "Just upload, convert, and download. No sign-up, ever." },
-      { "title": "Works Everywhere", "desc": "Use ConvertFlow on any device — desktop, tablet, or mobile." }
+      { "title": "Works Everywhere", "desc": "Use FlowToPDF on any device — desktop, tablet, or mobile." }
     ],
     "faq": "Frequently Asked Questions",
     "faqItems": [
       {
-        "q": "Is ConvertFlow really free?",
+        "q": "Is FlowToPDF really free?",
         "a": "Yes. All tools are free to use. We may show ads to support server costs, but conversions are always free."
       },
       {
@@ -66,7 +66,7 @@
       },
       {
         "q": "Do I need to install anything?",
-        "a": "No. ConvertFlow runs entirely in your browser. No software installation required."
+        "a": "No. FlowToPDF runs entirely in your browser. No software installation required."
       },
       {
         "q": "What formats are supported?",
@@ -166,10 +166,10 @@
       "en": "English",
       "es": "Español"
     },
-    "copyright": "© {{year}} ConvertFlow. All rights reserved."
+    "copyright": "© {{year}} FlowToPDF. All rights reserved."
   },
   "blog": {
-    "title": "ConvertFlow Blog",
+    "title": "FlowToPDF Blog",
     "subtitle": "Tips, guides and news about PDF tools and document conversion.",
     "readMore": "Read More",
     "byAuthor": "By {{author}}",

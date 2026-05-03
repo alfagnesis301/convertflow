@@ -41,8 +41,8 @@ export default function SitemapPage() {
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mb-10">
           {lang === 'en'
-            ? 'A complete list of all pages and tools available on ConvertFlow.'
-            : 'Lista completa de todas las páginas y herramientas disponibles en ConvertFlow.'}
+            ? 'A complete list of all pages and tools available on FlowToPDF.'
+            : 'Lista completa de todas las páginas y herramientas disponibles en FlowToPDF.'}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
             <>
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Introduction</h2>
-                <p>ConvertFlow ("we", "our", "us") provides free online document conversion tools at convertflow.app. We take your privacy seriously. This policy explains what information we collect, how we use it, and your rights.</p>
+                <p>FlowToPDF ("we", "our", "us") provides free online document conversion tools at FlowToPDF.app. We take your privacy seriously. This policy explains what information we collect, how we use it, and your rights.</p>
               </section>
 
               <section>
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
             <>
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Introducción</h2>
-                <p>ConvertFlow ("nosotros", "nuestro") ofrece herramientas de conversión de documentos gratuitas en convertflow.app. Nos tomamos tu privacidad en serio. Esta política explica qué información recopilamos, cómo la usamos y tus derechos.</p>
+                <p>FlowToPDF ("nosotros", "nuestro") ofrece herramientas de conversión de documentos gratuitas en FlowToPDF.app. Nos tomamos tu privacidad en serio. Esta política explica qué información recopilamos, cómo la usamos y tus derechos.</p>
               </section>
 
               <section>

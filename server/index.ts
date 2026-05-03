@@ -30,7 +30,7 @@ app.use(
   cors({
     origin:
       process.env['NODE_ENV'] === 'production'
-        ? [process.env['SITE_URL'] ?? 'https://convertflow.app']
+        ? [process.env['SITE_URL'] ?? 'https://FlowToPDF.app']
         : ['http://localhost:3000', 'http://127.0.0.1:3000'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Accept'],
@@ -108,7 +108,7 @@ app.use((
 // ─── Start ────────────────────────────────────────────────────────────────────
 
 const server = app.listen(PORT, () => {
-  console.log(`[server] ConvertFlow API running on http://localhost:${PORT}`);
+  console.log(`[server] FlowToPDF API running on http://localhost:${PORT}`);
   console.log(`[server] Max file size: ${MAX_FILE_SIZE_MB} MB`);
   cleanupService.startScheduler();
 });

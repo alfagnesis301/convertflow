@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://convertflow.app/sitemap.xml
+Sitemap: https://FlowToPDF.app/sitemap.xml

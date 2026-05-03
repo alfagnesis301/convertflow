@@ -1,4 +1,4 @@
-# ConvertFlow PDF Tools
+# FlowToPDF PDF Tools
 
 A full-stack web application providing free, browser-based PDF conversion and editing tools. Built with React, TypeScript, Vite, Tailwind CSS, Express, pdf-lib, and sharp.
 
@@ -48,8 +48,8 @@ A full-stack web application providing free, browser-based PDF conversion and ed
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/convertflow.git
-cd convertflow
+git clone https://github.com/your-org/FlowToPDF.git
+cd FlowToPDF
 
 # Install dependencies
 npm install
@@ -84,7 +84,7 @@ Copy `.env.example` to `.env` and configure as needed:
 
 | Variable                  | Default                    | Description                                          |
 |---------------------------|----------------------------|------------------------------------------------------|
-| `SITE_URL`                | `https://convertflow.app`  | Public URL of the site (used in canonical URLs)      |
+| `SITE_URL`                | `https://FlowToPDF.app`  | Public URL of the site (used in canonical URLs)      |
 | `CONTACT_EMAIL`           | —                          | Contact email shown in footer / contact page         |
 | `MAX_FILE_SIZE_MB`        | `50`                       | Maximum upload size in megabytes                     |
 | `ENABLE_ADSENSE`          | `false`                    | Set to `true` to render AdSense units                |
@@ -155,7 +155,7 @@ The files are plain JSON objects with nested keys. Edit them directly. The `t()`
 ## Project Structure
 
 ```
-convertflow/
+FlowToPDF/
 ├── index.html                  # HTML shell
 ├── package.json
 ├── tsconfig.json               # Frontend TS config

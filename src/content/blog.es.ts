@@ -7,7 +7,7 @@ export const blogPostsEs: BlogPost[] = [
     excerpt:
       'Convertir un PDF a un documento Word editable puede ser complicado. Aprende los mejores métodos y herramientas para preservar el diseño y las fuentes.',
     date: '2025-04-10',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Guías',
     relatedTools: ['pdf-to-word'],
     content: `
@@ -21,9 +21,9 @@ Los archivos PDF están diseñados para una presentación de diseño fijo, no pa
 2. **Evita diseños complejos con múltiples columnas** — Los artículos académicos con dos columnas suelen perder su estructura al convertirse.
 3. **Revisa las fuentes después de la conversión** — Algunas fuentes pueden sustituirse. Revisa el documento en Word y corrige cualquier problema de fuente.
 
-## Cómo lo hace ConvertFlow
+## Cómo lo hace FlowToPDF
 
-ConvertFlow usa LibreOffice en el servidor para realizar la conversión. LibreOffice es una suite ofimática de código abierto con sólidas capacidades de importación de PDF. La conversión tarda unos segundos para un documento estándar.
+FlowToPDF usa LibreOffice en el servidor para realizar la conversión. LibreOffice es una suite ofimática de código abierto con sólidas capacidades de importación de PDF. La conversión tarda unos segundos para un documento estándar.
 
 ## Problemas comunes y soluciones
 
@@ -33,7 +33,7 @@ ConvertFlow usa LibreOffice en el servidor para realizar la conversión. LibreOf
 
 ## Conclusión
 
-Para la mayoría de los PDFs estándar, un conversor gratuito en línea como ConvertFlow producirá un documento Word limpio y editable.
+Para la mayoría de los PDFs estándar, un conversor gratuito en línea como FlowToPDF producirá un documento Word limpio y editable.
     `,
   },
   {
@@ -42,7 +42,7 @@ Para la mayoría de los PDFs estándar, un conversor gratuito en línea como Con
     excerpt:
       'Los PDFs grandes ralentizan los adjuntos de correo electrónico y las subidas. Aquí te explicamos cómo reducir el tamaño del archivo PDF manteniéndolo legible.',
     date: '2025-04-15',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Consejos',
     relatedTools: ['compress-pdf'],
     content: `
@@ -52,7 +52,7 @@ Los PDFs crecen en tamaño por las imágenes incrustadas, fuentes, metadatos y, 
 
 ## Niveles de compresión explicados
 
-ConvertFlow ofrece tres niveles de compresión:
+FlowToPDF ofrece tres niveles de compresión:
 
 - **Bajo**: Reduce el tamaño del archivo ligeramente. Ideal para documentos donde la calidad es crítica, como contratos o documentos legales.
 - **Medio**: Un equilibrio recomendado para la mayoría de usos. Reduce el tamaño del archivo un 30-60%.
@@ -75,7 +75,7 @@ No comprimas en exceso PDFs que se vayan a imprimir en alta resolución, como fo
     excerpt:
       'Combinar varios archivos PDF en uno es sencillo cuando conoces las herramientas adecuadas. Sigue esta guía paso a paso para unir PDFs gratis online.',
     date: '2025-04-22',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Guías',
     relatedTools: ['merge-pdf'],
     content: `
@@ -88,7 +88,7 @@ Algunos casos comunes para unir PDFs incluyen:
 - Enviar varias páginas escaneadas como un único adjunto
 - Unir informes de diferentes departamentos en una sola presentación
 
-## Pasos para unir PDFs con ConvertFlow
+## Pasos para unir PDFs con FlowToPDF
 
 1. Ve a la herramienta **Unir PDF**.
 2. Sube hasta 20 archivos PDF arrastrando y soltando o haciendo clic en "Elegir archivo".
@@ -109,7 +109,7 @@ Algunos casos comunes para unir PDFs incluyen:
     excerpt:
       'Al convertir imágenes a PDF, los pequeños detalles como el tamaño de página y los márgenes importan. Aquí te explicamos cómo obtener el mejor resultado de tus archivos JPG.',
     date: '2025-05-01',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Consejos',
     relatedTools: ['jpg-to-pdf'],
     content: `
@@ -135,7 +135,7 @@ Puedes subir hasta 20 imágenes JPG a la vez. Se colocarán en páginas separada
 
 ## Consideraciones de calidad
 
-ConvertFlow usa la resolución original de tu imagen. Para mejor calidad de impresión, usa imágenes de al menos 150 DPI.
+FlowToPDF usa la resolución original de tu imagen. Para mejor calidad de impresión, usa imágenes de al menos 150 DPI.
     `,
   },
   {
@@ -144,7 +144,7 @@ ConvertFlow usa la resolución original de tu imagen. Para mejor calidad de impr
     excerpt:
       'Proteger con contraseña los PDFs sensibles es una medida de seguridad rápida. Aprende cuándo y cómo proteger tus PDFs correctamente.',
     date: '2025-05-10',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Seguridad',
     relatedTools: ['protect-pdf', 'unlock-pdf'],
     content: `
@@ -167,7 +167,7 @@ Si conoces la contraseña, puedes eliminarla usando la herramienta **Desbloquear
 
 ## Nota importante
 
-ConvertFlow no almacena tus contraseñas. Si olvidas la contraseña de un PDF protegido, no se puede recuperar.
+FlowToPDF no almacena tus contraseñas. Si olvidas la contraseña de un PDF protegido, no se puede recuperar.
     `,
   },
   {
@@ -176,7 +176,7 @@ ConvertFlow no almacena tus contraseñas. Si olvidas la contraseña de un PDF pr
     excerpt:
       'El OCR (Reconocimiento Óptico de Caracteres) transforma imágenes escaneadas en texto buscable. Aquí te explicamos cuándo y por qué lo necesitas.',
     date: '2025-05-18',
-    author: 'Equipo ConvertFlow',
+    author: 'Equipo FlowToPDF',
     category: 'Guías',
     relatedTools: ['ocr-pdf'],
     content: `
@@ -194,7 +194,7 @@ Sin OCR, un PDF escaneado es solo una imagen: no puedes seleccionar texto, busca
 
 ## Soporte de idiomas para OCR
 
-La herramienta OCR de ConvertFlow admite: inglés, español, francés, alemán, portugués e italiano. Seleccionar el idioma correcto para tu documento mejora significativamente la precisión.
+La herramienta OCR de FlowToPDF admite: inglés, español, francés, alemán, portugués e italiano. Seleccionar el idioma correcto para tu documento mejora significativamente la precisión.
 
 ## Expectativas de precisión
 

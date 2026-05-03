@@ -9,8 +9,8 @@ export default function DMCAPage() {
   const isEn = lang === 'en';
   const meta = {
     ...baseMeta,
-    title: 'DMCA Policy | ConvertFlow',
-    description: 'ConvertFlow DMCA takedown policy and contact information for copyright concerns.',
+    title: 'DMCA Policy | FlowToPDF',
+    description: 'FlowToPDF DMCA takedown policy and contact information for copyright concerns.',
   };
 
   return (
@@ -29,12 +29,12 @@ export default function DMCAPage() {
             <>
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Our Policy</h2>
-                <p>ConvertFlow respects intellectual property rights and expects its users to do the same. ConvertFlow does not store user-uploaded files beyond the conversion session (files are deleted within 30 minutes). However, if you believe that copyrighted material has been processed or shared through our platform without authorization, you may submit a takedown request.</p>
+                <p>FlowToPDF respects intellectual property rights and expects its users to do the same. FlowToPDF does not store user-uploaded files beyond the conversion session (files are deleted within 30 minutes). However, if you believe that copyrighted material has been processed or shared through our platform without authorization, you may submit a takedown request.</p>
               </section>
 
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">How We Operate</h2>
-                <p>ConvertFlow is a file conversion service. Users upload their own files, convert them, and download the result. We do not host, distribute, or share user files publicly. Files are automatically deleted within 30 minutes of upload. We do not maintain a content library.</p>
+                <p>FlowToPDF is a file conversion service. Users upload their own files, convert them, and download the result. We do not host, distribute, or share user files publicly. Files are automatically deleted within 30 minutes of upload. We do not maintain a content library.</p>
               </section>
 
               <section>
@@ -68,7 +68,7 @@ export default function DMCAPage() {
             <>
               <section>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">Nuestra política</h2>
-                <p>ConvertFlow respeta los derechos de propiedad intelectual y espera que sus usuarios hagan lo mismo. ConvertFlow no almacena los archivos subidos por los usuarios más allá de la sesión de conversión (los archivos se eliminan en 30 minutos). Si crees que material protegido por derechos de autor ha sido procesado sin autorización, puedes enviar una solicitud de eliminación.</p>
+                <p>FlowToPDF respeta los derechos de propiedad intelectual y espera que sus usuarios hagan lo mismo. FlowToPDF no almacena los archivos subidos por los usuarios más allá de la sesión de conversión (los archivos se eliminan en 30 minutos). Si crees que material protegido por derechos de autor ha sido procesado sin autorización, puedes enviar una solicitud de eliminación.</p>
               </section>
 
               <section>

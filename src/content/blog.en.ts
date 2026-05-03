@@ -16,7 +16,7 @@ export const blogPostsEn: BlogPost[] = [
     excerpt:
       'Converting a PDF to an editable Word document can be tricky. Learn the best methods and tools to preserve your layout and fonts.',
     date: '2025-04-10',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Guides',
     relatedTools: ['pdf-to-word'],
     content: `
@@ -30,9 +30,9 @@ PDF files are designed for fixed-layout presentation, not editing. When you conv
 2. **Avoid complex multi-column layouts** — Two-column academic papers often lose their structure on conversion. Simpler PDFs convert more cleanly.
 3. **Check fonts after conversion** — Some fonts may be substituted. Review your document in Word and correct any font issues.
 
-## How ConvertFlow Does It
+## How FlowToPDF Does It
 
-ConvertFlow uses LibreOffice on the backend to perform the conversion. LibreOffice is a mature, open-source office suite with robust PDF import capabilities. The conversion typically takes a few seconds for a standard document.
+FlowToPDF uses LibreOffice on the backend to perform the conversion. LibreOffice is a mature, open-source office suite with robust PDF import capabilities. The conversion typically takes a few seconds for a standard document.
 
 ## Common Issues and Fixes
 
@@ -42,7 +42,7 @@ ConvertFlow uses LibreOffice on the backend to perform the conversion. LibreOffi
 
 ## Conclusion
 
-For most standard PDFs, a free online converter like ConvertFlow will produce a clean, editable Word document. For complex PDFs with heavy graphics or unusual layouts, expect some manual cleanup.
+For most standard PDFs, a free online converter like FlowToPDF will produce a clean, editable Word document. For complex PDFs with heavy graphics or unusual layouts, expect some manual cleanup.
     `,
   },
   {
@@ -51,7 +51,7 @@ For most standard PDFs, a free online converter like ConvertFlow will produce a 
     excerpt:
       'Large PDFs slow down email attachments and uploads. Here is how to reduce PDF file size while keeping it readable.',
     date: '2025-04-15',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Tips',
     relatedTools: ['compress-pdf'],
     content: `
@@ -61,7 +61,7 @@ PDFs grow in size because of embedded images, fonts, metadata, and sometimes red
 
 ## Compression Levels Explained
 
-ConvertFlow offers three compression levels:
+FlowToPDF offers three compression levels:
 
 - **Low**: Reduces file size slightly. Best for documents where quality is critical — like contracts or legal documents.
 - **Medium**: A balanced trade-off. Recommended for most uses. Reduces file size by 30–60%.
@@ -84,7 +84,7 @@ Do not heavily compress PDFs that will be printed at high resolution, such as br
     excerpt:
       'Combining several PDF files into one is simple when you know the right tools. Follow this step-by-step guide to merge PDFs online for free.',
     date: '2025-04-22',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Guides',
     relatedTools: ['merge-pdf'],
     content: `
@@ -97,7 +97,7 @@ Common scenarios for merging PDFs include:
 - Sending multiple scanned pages as a single attachment
 - Merging reports from different departments into one presentation
 
-## Steps to Merge PDFs With ConvertFlow
+## Steps to Merge PDFs With FlowToPDF
 
 1. Navigate to the **Merge PDF** tool.
 2. Upload up to 20 PDF files by dragging and dropping or clicking "Choose File".
@@ -122,7 +122,7 @@ If you need to merge PDFs regularly as part of a workflow, consider using comman
     excerpt:
       'When converting images to PDF, small details like page size and margins matter. Here is how to get the best output from your JPG files.',
     date: '2025-05-01',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Tips',
     relatedTools: ['jpg-to-pdf'],
     content: `
@@ -148,7 +148,7 @@ You can upload up to 20 JPG images at once. They will be placed on separate page
 
 ## Quality Considerations
 
-ConvertFlow uses your original image resolution. For best print quality, use images of at least 150 DPI. For screen viewing, even lower-resolution images produce readable PDFs.
+FlowToPDF uses your original image resolution. For best print quality, use images of at least 150 DPI. For screen viewing, even lower-resolution images produce readable PDFs.
     `,
   },
   {
@@ -157,7 +157,7 @@ ConvertFlow uses your original image resolution. For best print quality, use ima
     excerpt:
       'Password protecting sensitive PDFs is a quick security measure. Learn when to protect your PDFs and how to do it correctly.',
     date: '2025-05-10',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Security',
     relatedTools: ['protect-pdf', 'unlock-pdf'],
     content: `
@@ -182,7 +182,7 @@ If you know the password, you can remove it using the **Unlock PDF** tool. This 
 
 ## Important Note
 
-ConvertFlow does not store your passwords. If you forget the password to a protected PDF, it cannot be recovered.
+FlowToPDF does not store your passwords. If you forget the password to a protected PDF, it cannot be recovered.
     `,
   },
   {
@@ -191,7 +191,7 @@ ConvertFlow does not store your passwords. If you forget the password to a prote
     excerpt:
       'OCR (Optical Character Recognition) transforms scanned images into searchable text. Here is when and why you need it.',
     date: '2025-05-18',
-    author: 'ConvertFlow Team',
+    author: 'FlowToPDF Team',
     category: 'Guides',
     relatedTools: ['ocr-pdf'],
     content: `
@@ -209,7 +209,7 @@ Without OCR, a scanned PDF is just an image — you cannot select text, search f
 
 ## OCR Language Support
 
-ConvertFlow's OCR tool supports: English, Spanish, French, German, Portuguese, and Italian. Selecting the correct language for your document improves accuracy significantly.
+FlowToPDF's OCR tool supports: English, Spanish, French, German, Portuguese, and Italian. Selecting the correct language for your document improves accuracy significantly.
 
 ## Accuracy Expectations
 

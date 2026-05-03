@@ -42,7 +42,7 @@ export default function SEOHead({ meta }: SEOHeadProps) {
     setMeta('og:url', meta.ogUrl, true);
     setMeta('og:image', meta.ogImage, true);
     setMeta('og:type', 'website', true);
-    setMeta('og:site_name', 'ConvertFlow', true);
+    setMeta('og:site_name', 'FlowToPDF', true);
 
     // Twitter
     setMeta('twitter:card', 'summary_large_image');

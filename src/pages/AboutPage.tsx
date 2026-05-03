@@ -17,12 +17,12 @@ export default function AboutPage() {
         <Breadcrumbs />
 
         <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          {isEn ? 'About ConvertFlow' : 'Sobre ConvertFlow'}
+          {isEn ? 'About FlowToPDF' : 'Sobre FlowToPDF'}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
           {isEn
-            ? 'ConvertFlow is a free, browser-based toolkit for working with PDF files. We built it because most PDF tools are either too expensive, require account creation, or fill your browser with ads. We wanted something simpler.'
-            : 'ConvertFlow es un kit de herramientas gratuito basado en el navegador para trabajar con archivos PDF. Lo creamos porque la mayoría de herramientas PDF son demasiado caras, requieren crear una cuenta o llenan el navegador de anuncios. Queríamos algo más sencillo.'}
+            ? 'FlowToPDF is a free, browser-based toolkit for working with PDF files. We built it because most PDF tools are either too expensive, require account creation, or fill your browser with ads. We wanted something simpler.'
+            : 'FlowToPDF es un kit de herramientas gratuito basado en el navegador para trabajar con archivos PDF. Lo creamos porque la mayoría de herramientas PDF son demasiado caras, requieren crear una cuenta o llenan el navegador de anuncios. Queríamos algo más sencillo.'}
         </p>
 
         <div className="space-y-10">
@@ -94,8 +94,8 @@ export default function AboutPage() {
             </h2>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
               {isEn
-                ? 'ConvertFlow is built on a modern open-source stack:'
-                : 'ConvertFlow está construido sobre un moderno stack de código abierto:'}
+                ? 'FlowToPDF is built on a modern open-source stack:'
+                : 'FlowToPDF está construido sobre un moderno stack de código abierto:'}
             </p>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               {[
