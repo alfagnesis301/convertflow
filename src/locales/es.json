@@ -1,0 +1,180 @@
+{
+  "nav": {
+    "tools": "Herramientas",
+    "converter": "Convertidor",
+    "about": "Nosotros",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "common": {
+    "upload": "Subir archivo",
+    "convert": "Convertir",
+    "download": "Descargar",
+    "chooseFile": "Elegir archivo",
+    "convertNow": "Convertir ahora",
+    "downloadFile": "Descargar archivo",
+    "downloadAll": "Descargar todos",
+    "maxSize": "Tamaño máximo: {{size}} MB",
+    "processing": "Procesando tu archivo…",
+    "success": "¡Conversión exitosa!",
+    "error": "Algo salió mal.",
+    "dragDrop": "Arrastra tu archivo aquí",
+    "orClickToUpload": "o haz clic para seleccionar",
+    "filePrivacyNotice": "Tus archivos se procesan de forma segura y se eliminan automáticamente tras la conversión.",
+    "limitationNotice": "Algunas conversiones requieren herramientas del servidor que pueden no estar disponibles en todos los planes.",
+    "comingSoon": "Próximamente",
+    "tryNow": "Probar ahora",
+    "learnMore": "Saber más",
+    "backToHome": "Volver al inicio",
+    "allTools": "Todas las herramientas",
+    "freeOnline": "Gratis en línea",
+    "noRegistration": "Sin registro",
+    "secureFast": "Seguro y rápido"
+  },
+  "home": {
+    "h1": "Herramientas PDF gratuitas y fáciles de usar",
+    "intro": "Convierte, une, divide, comprime y edita archivos PDF online. Sin instalar nada, sin crear cuenta. Rápido, seguro y completamente gratis.",
+    "popularTools": "Herramientas populares",
+    "allTools": "Todas las herramientas PDF",
+    "howItWorks": "¿Cómo funciona?",
+    "howItWorksSteps": [
+      { "step": "1", "title": "Sube tu archivo", "desc": "Selecciona o arrastra tu archivo. Compatible con PDF, Word, Excel, imágenes y más." },
+      { "step": "2", "title": "Convierte al instante", "desc": "Nuestro servidor procesa tu archivo en segundos usando bibliotecas de código abierto." },
+      { "step": "3", "title": "Descarga el resultado", "desc": "Tu archivo convertido estará listo para descargar. Los archivos se eliminan a los 30 minutos." }
+    ],
+    "whyUs": "¿Por qué elegir ConvertFlow?",
+    "whyUsPoints": [
+      { "title": "100% gratuito", "desc": "Todas las herramientas principales son gratis, sin costes ocultos ni marcas de agua." },
+      { "title": "Tu privacidad primero", "desc": "Los archivos se eliminan automáticamente. Nunca leemos ni compartimos tus documentos." },
+      { "title": "Sin registro", "desc": "Solo sube, convierte y descarga. Sin cuentas, sin complicaciones." },
+      { "title": "Funciona en cualquier dispositivo", "desc": "Usa ConvertFlow desde tu ordenador, tablet o móvil sin instalar nada." }
+    ],
+    "faq": "Preguntas frecuentes",
+    "faqItems": [
+      {
+        "q": "¿ConvertFlow es realmente gratuito?",
+        "a": "Sí. Todas las herramientas son gratuitas. Mostramos publicidad para cubrir los costes del servidor, pero las conversiones siempre son gratis."
+      },
+      {
+        "q": "¿Mis archivos están seguros?",
+        "a": "Absolutamente. Los archivos se procesan en nuestros servidores seguros y se eliminan automáticamente tras la conversión o en un máximo de 30 minutos."
+      },
+      {
+        "q": "¿Qué tamaño de archivo se admite?",
+        "a": "Puedes subir archivos de hasta 50 MB. Para archivos más grandes, divídelos primero."
+      },
+      {
+        "q": "¿Necesito instalar algo?",
+        "a": "No. ConvertFlow funciona directamente en tu navegador. No es necesario instalar ningún programa."
+      },
+      {
+        "q": "¿Qué formatos están disponibles?",
+        "a": "Admitimos PDF, Word (DOCX), Excel (XLSX), PowerPoint (PPTX), imágenes (JPG, PNG, WebP, GIF, SVG), texto, HTML, Markdown, CSV y más."
+      }
+    ],
+    "heroCtaMain": "Empieza a convertir gratis",
+    "heroCtaSecondary": "Ver todas las herramientas"
+  },
+  "tools": {
+    "pdf-to-word": { "name": "PDF a Word", "desc": "Convierte archivos PDF a documentos Word (DOCX) editables conservando el formato." },
+    "word-to-pdf": { "name": "Word a PDF", "desc": "Transforma documentos Word (DOCX, DOC) en archivos PDF al instante." },
+    "jpg-to-pdf": { "name": "JPG a PDF", "desc": "Convierte imágenes JPG a PDF con tamaño de página y márgenes personalizables." },
+    "png-to-pdf": { "name": "PNG a PDF", "desc": "Convierte imágenes PNG a PDF, con fondo blanco en zonas transparentes." },
+    "webp-to-pdf": { "name": "WebP a PDF", "desc": "Convierte imágenes WebP modernas a un documento PDF de alta calidad." },
+    "gif-to-pdf": { "name": "GIF a PDF", "desc": "Convierte imágenes GIF (primer fotograma) a un archivo PDF." },
+    "pdf-to-jpg": { "name": "PDF a JPG", "desc": "Extrae páginas de un PDF y guarda cada una como imagen JPG." },
+    "pdf-to-png": { "name": "PDF a PNG", "desc": "Convierte páginas de PDF a imágenes PNG de alta calidad." },
+    "pdf-to-text": { "name": "PDF a Texto", "desc": "Extrae todo el contenido de texto de un PDF como archivo de texto plano." },
+    "text-to-pdf": { "name": "Texto a PDF", "desc": "Convierte archivos de texto plano (.txt) a un PDF bien formateado." },
+    "html-to-pdf": { "name": "HTML a PDF", "desc": "Convierte código HTML o contenido web a un documento PDF." },
+    "markdown-to-pdf": { "name": "Markdown a PDF", "desc": "Convierte archivos Markdown a un documento PDF con formato." },
+    "excel-to-pdf": { "name": "Excel a PDF", "desc": "Convierte hojas de cálculo Excel (XLSX, XLS) a formato PDF." },
+    "powerpoint-to-pdf": { "name": "PowerPoint a PDF", "desc": "Convierte presentaciones de PowerPoint (PPTX, PPT) a PDF." },
+    "merge-pdf": { "name": "Unir PDF", "desc": "Combina varios archivos PDF en un único documento." },
+    "split-pdf": { "name": "Dividir PDF", "desc": "Divide un PDF en páginas individuales o rangos personalizados." },
+    "compress-pdf": { "name": "Comprimir PDF", "desc": "Reduce el tamaño del archivo PDF manteniendo la calidad." },
+    "rotate-pdf": { "name": "Rotar PDF", "desc": "Rota todas o algunas páginas de un PDF 90, 180 o 270 grados." },
+    "protect-pdf": { "name": "Proteger PDF", "desc": "Añade una contraseña a tu PDF para evitar accesos no autorizados." },
+    "unlock-pdf": { "name": "Desbloquear PDF", "desc": "Elimina la protección por contraseña de un PDF (necesitas conocerla)." },
+    "reorder-pdf": { "name": "Reordenar páginas PDF", "desc": "Arrastra y suelta para reorganizar las páginas de tu PDF." },
+    "extract-pages": { "name": "Extraer páginas", "desc": "Extrae páginas concretas de un PDF en un nuevo documento." },
+    "image-to-pdf": { "name": "Imágenes a PDF", "desc": "Combina varias imágenes (JPG, PNG, WebP) en un único archivo PDF." },
+    "svg-to-pdf": { "name": "SVG a PDF", "desc": "Convierte gráficos vectoriales SVG a un documento PDF." },
+    "ocr-pdf": { "name": "OCR PDF", "desc": "Convierte PDFs escaneados en texto buscable mediante reconocimiento óptico de caracteres." },
+    "docx-to-pdf": { "name": "DOCX a PDF", "desc": "Convierte archivos DOCX a formato PDF." },
+    "odt-to-pdf": { "name": "ODT a PDF", "desc": "Convierte archivos OpenDocument Text a PDF." },
+    "txt-to-pdf": { "name": "TXT a PDF", "desc": "Convierte texto plano (.txt) a PDF." },
+    "rtf-to-pdf": { "name": "RTF a PDF", "desc": "Convierte archivos en formato de texto enriquecido a PDF." },
+    "csv-to-pdf": { "name": "CSV a PDF", "desc": "Convierte archivos de datos CSV a una tabla en PDF." }
+  },
+  "errors": {
+    "fileTooLarge": "El archivo supera el tamaño máximo permitido de {{size}} MB.",
+    "invalidFormat": "Este formato no es compatible con esta herramienta.",
+    "conversionFailed": "La conversión ha fallado. Comprueba el archivo e inténtalo de nuevo.",
+    "serverError": "Ha ocurrido un error en el servidor. Por favor, inténtalo en unos momentos.",
+    "uploadFailed": "Error al subir el archivo. Comprueba tu conexión e inténtalo de nuevo.",
+    "noFileSelected": "Selecciona un archivo antes de convertir.",
+    "tooManyFiles": "Puedes subir un máximo de {{max}} archivos a la vez.",
+    "passwordRequired": "Se requiere una contraseña para esta operación.",
+    "invalidPassword": "Contraseña incorrecta. Por favor, inténtalo de nuevo.",
+    "emptyFile": "El archivo subido está vacío.",
+    "corruptedFile": "El archivo parece estar dañado o no es un archivo {{format}} válido."
+  },
+  "legal": {
+    "privacy": "Política de privacidad",
+    "terms": "Términos de servicio",
+    "cookie": "Política de cookies",
+    "dmca": "DMCA",
+    "disclaimer": "Aviso legal",
+    "about": "Sobre nosotros",
+    "contact": "Contacto"
+  },
+  "cookie": {
+    "banner": "Utilizamos cookies para mejorar tu experiencia y analizar el tráfico del sitio. Al continuar usando este sitio, aceptas el uso de cookies.",
+    "accept": "Aceptar todo",
+    "reject": "Rechazar no esenciales",
+    "manage": "Gestionar preferencias",
+    "moreInfo": "Más información en nuestra política de cookies."
+  },
+  "footer": {
+    "tagline": "Herramientas PDF gratuitas para todos.",
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre nosotros",
+      "blog": "Blog",
+      "contact": "Contacto",
+      "changelog": "Novedades"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Política de privacidad",
+      "terms": "Términos de servicio",
+      "cookie": "Política de cookies",
+      "dmca": "DMCA"
+    },
+    "tools": {
+      "title": "Herramientas populares",
+      "mergePdf": "Unir PDF",
+      "splitPdf": "Dividir PDF",
+      "compressPdf": "Comprimir PDF",
+      "pdfToWord": "PDF a Word",
+      "jpgToPdf": "JPG a PDF"
+    },
+    "languages": {
+      "title": "Idiomas",
+      "en": "English",
+      "es": "Español"
+    },
+    "copyright": "© {{year}} ConvertFlow. Todos los derechos reservados."
+  },
+  "blog": {
+    "title": "Blog de ConvertFlow",
+    "subtitle": "Guías, consejos y novedades sobre herramientas PDF y conversión de documentos.",
+    "readMore": "Leer más",
+    "byAuthor": "Por {{author}}",
+    "publishedOn": "Publicado el {{date}}",
+    "relatedArticles": "Artículos relacionados",
+    "backToBlog": "Volver al blog"
+  }
+}

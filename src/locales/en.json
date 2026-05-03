@@ -1,0 +1,180 @@
+{
+  "nav": {
+    "tools": "Tools",
+    "converter": "Converter",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "common": {
+    "upload": "Upload",
+    "convert": "Convert",
+    "download": "Download",
+    "chooseFile": "Choose File",
+    "convertNow": "Convert Now",
+    "downloadFile": "Download File",
+    "downloadAll": "Download All",
+    "maxSize": "Max file size: {{size}} MB",
+    "processing": "Processing your file…",
+    "success": "Conversion successful!",
+    "error": "Something went wrong.",
+    "dragDrop": "Drag & drop your file here",
+    "orClickToUpload": "or click to upload",
+    "filePrivacyNotice": "Your files are processed securely and deleted automatically after conversion.",
+    "limitationNotice": "Some conversions require server-side tools that may not be available on all plans.",
+    "comingSoon": "Coming Soon",
+    "tryNow": "Try Now",
+    "learnMore": "Learn More",
+    "backToHome": "Back to Home",
+    "allTools": "All Tools",
+    "freeOnline": "Free Online",
+    "noRegistration": "No registration required",
+    "secureFast": "Secure & fast"
+  },
+  "home": {
+    "h1": "Free and Easy PDF Tools Online",
+    "intro": "Convert, merge, split, compress and edit PDF files online. No installation needed, no sign-up required. Fast, secure, and free.",
+    "popularTools": "Popular Tools",
+    "allTools": "All PDF Tools",
+    "howItWorks": "How It Works",
+    "howItWorksSteps": [
+      { "step": "1", "title": "Upload your file", "desc": "Select or drag & drop your file. We support PDF, Word, Excel, images, and more." },
+      { "step": "2", "title": "Convert instantly", "desc": "Our server processes your file in seconds using trusted open-source libraries." },
+      { "step": "3", "title": "Download the result", "desc": "Your converted file is ready to download. Files are deleted after 30 minutes." }
+    ],
+    "whyUs": "Why Choose ConvertFlow?",
+    "whyUsPoints": [
+      { "title": "100% Free", "desc": "All core tools are free, with no hidden fees or watermarks." },
+      { "title": "Privacy First", "desc": "Files are deleted automatically. We never read or share your documents." },
+      { "title": "No Account Needed", "desc": "Just upload, convert, and download. No sign-up, ever." },
+      { "title": "Works Everywhere", "desc": "Use ConvertFlow on any device — desktop, tablet, or mobile." }
+    ],
+    "faq": "Frequently Asked Questions",
+    "faqItems": [
+      {
+        "q": "Is ConvertFlow really free?",
+        "a": "Yes. All tools are free to use. We may show ads to support server costs, but conversions are always free."
+      },
+      {
+        "q": "Are my files safe?",
+        "a": "Absolutely. Files are processed on our secure servers and deleted automatically after conversion or within 30 minutes."
+      },
+      {
+        "q": "What file size is supported?",
+        "a": "You can upload files up to 50 MB. For larger files, please split them first."
+      },
+      {
+        "q": "Do I need to install anything?",
+        "a": "No. ConvertFlow runs entirely in your browser. No software installation required."
+      },
+      {
+        "q": "What formats are supported?",
+        "a": "We support PDF, Word (DOCX), Excel (XLSX), PowerPoint (PPTX), images (JPG, PNG, WebP, GIF, SVG), text, HTML, Markdown, CSV, and more."
+      }
+    ],
+    "heroCtaMain": "Start Converting for Free",
+    "heroCtaSecondary": "View All Tools"
+  },
+  "tools": {
+    "pdf-to-word": { "name": "PDF to Word", "desc": "Convert PDF files to editable Word documents (DOCX) while preserving formatting." },
+    "word-to-pdf": { "name": "Word to PDF", "desc": "Turn Word documents (DOCX, DOC) into PDF files instantly." },
+    "jpg-to-pdf": { "name": "JPG to PDF", "desc": "Convert JPG images to PDF with customizable page size and margins." },
+    "png-to-pdf": { "name": "PNG to PDF", "desc": "Convert PNG images to PDF, preserving transparency as white background." },
+    "webp-to-pdf": { "name": "WebP to PDF", "desc": "Convert modern WebP images to a high-quality PDF document." },
+    "gif-to-pdf": { "name": "GIF to PDF", "desc": "Convert GIF images (first frame) to a PDF file." },
+    "pdf-to-jpg": { "name": "PDF to JPG", "desc": "Extract pages from a PDF and save each as a JPG image." },
+    "pdf-to-png": { "name": "PDF to PNG", "desc": "Convert PDF pages to high-quality PNG images." },
+    "pdf-to-text": { "name": "PDF to Text", "desc": "Extract all text content from a PDF as a plain text file." },
+    "text-to-pdf": { "name": "Text to PDF", "desc": "Convert plain text files (.txt) to a neatly formatted PDF." },
+    "html-to-pdf": { "name": "HTML to PDF", "desc": "Convert HTML code or web content to a PDF document." },
+    "markdown-to-pdf": { "name": "Markdown to PDF", "desc": "Convert Markdown files to a formatted PDF document." },
+    "excel-to-pdf": { "name": "Excel to PDF", "desc": "Convert Excel spreadsheets (XLSX, XLS) to PDF format." },
+    "powerpoint-to-pdf": { "name": "PowerPoint to PDF", "desc": "Convert PowerPoint presentations (PPTX, PPT) to PDF." },
+    "merge-pdf": { "name": "Merge PDF", "desc": "Combine multiple PDF files into a single document." },
+    "split-pdf": { "name": "Split PDF", "desc": "Split a PDF into individual pages or custom page ranges." },
+    "compress-pdf": { "name": "Compress PDF", "desc": "Reduce the file size of your PDF while maintaining quality." },
+    "rotate-pdf": { "name": "Rotate PDF", "desc": "Rotate all or selected pages in a PDF by 90, 180, or 270 degrees." },
+    "protect-pdf": { "name": "Protect PDF", "desc": "Add a password to your PDF to prevent unauthorized access." },
+    "unlock-pdf": { "name": "Unlock PDF", "desc": "Remove password protection from a PDF (requires knowing the password)." },
+    "reorder-pdf": { "name": "Reorder PDF Pages", "desc": "Drag and drop to rearrange pages in your PDF document." },
+    "extract-pages": { "name": "Extract Pages", "desc": "Extract specific pages from a PDF into a new document." },
+    "image-to-pdf": { "name": "Images to PDF", "desc": "Combine multiple images (JPG, PNG, WebP) into one PDF file." },
+    "svg-to-pdf": { "name": "SVG to PDF", "desc": "Convert SVG vector graphics to a PDF document." },
+    "ocr-pdf": { "name": "OCR PDF", "desc": "Make scanned PDFs searchable using optical character recognition." },
+    "docx-to-pdf": { "name": "DOCX to PDF", "desc": "Convert DOCX files to PDF format." },
+    "odt-to-pdf": { "name": "ODT to PDF", "desc": "Convert OpenDocument Text files to PDF." },
+    "txt-to-pdf": { "name": "TXT to PDF", "desc": "Convert plain text (.txt) to PDF." },
+    "rtf-to-pdf": { "name": "RTF to PDF", "desc": "Convert Rich Text Format files to PDF." },
+    "csv-to-pdf": { "name": "CSV to PDF", "desc": "Convert CSV data files to a PDF table." }
+  },
+  "errors": {
+    "fileTooLarge": "The file exceeds the maximum allowed size of {{size}} MB.",
+    "invalidFormat": "This file format is not supported by this tool.",
+    "conversionFailed": "Conversion failed. Please check your file and try again.",
+    "serverError": "A server error occurred. Please try again in a moment.",
+    "uploadFailed": "File upload failed. Please check your connection and try again.",
+    "noFileSelected": "Please select a file before converting.",
+    "tooManyFiles": "You can upload a maximum of {{max}} files at once.",
+    "passwordRequired": "A password is required for this operation.",
+    "invalidPassword": "Incorrect password. Please try again.",
+    "emptyFile": "The uploaded file is empty.",
+    "corruptedFile": "The file appears to be corrupted or is not a valid {{format}} file."
+  },
+  "legal": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookie": "Cookie Policy",
+    "dmca": "DMCA",
+    "disclaimer": "Disclaimer",
+    "about": "About Us",
+    "contact": "Contact"
+  },
+  "cookie": {
+    "banner": "We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our use of cookies.",
+    "accept": "Accept All",
+    "reject": "Reject Non-Essential",
+    "manage": "Manage Preferences",
+    "moreInfo": "Learn more in our Cookie Policy."
+  },
+  "footer": {
+    "tagline": "Free PDF tools for everyone.",
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "blog": "Blog",
+      "contact": "Contact",
+      "changelog": "Changelog"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookie": "Cookie Policy",
+      "dmca": "DMCA"
+    },
+    "tools": {
+      "title": "Top Tools",
+      "mergePdf": "Merge PDF",
+      "splitPdf": "Split PDF",
+      "compressPdf": "Compress PDF",
+      "pdfToWord": "PDF to Word",
+      "jpgToPdf": "JPG to PDF"
+    },
+    "languages": {
+      "title": "Languages",
+      "en": "English",
+      "es": "Español"
+    },
+    "copyright": "© {{year}} ConvertFlow. All rights reserved."
+  },
+  "blog": {
+    "title": "ConvertFlow Blog",
+    "subtitle": "Tips, guides and news about PDF tools and document conversion.",
+    "readMore": "Read More",
+    "byAuthor": "By {{author}}",
+    "publishedOn": "Published on {{date}}",
+    "relatedArticles": "Related Articles",
+    "backToBlog": "Back to Blog"
+  }
+}
