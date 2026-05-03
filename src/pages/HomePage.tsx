@@ -338,7 +338,7 @@ export default function HomePage() {
               ? 'Join thousands of users who convert their files with ConvertFlow every day.'
               : 'Únete a miles de usuarios que convierten sus archivos con ConvertFlow cada día.'}
           </p>
-          <Link to={`/${lang}/pdf-tools`} className="btn-primary text-base px-8 py-4">
+          <Link to={lang === 'en' ? '/en/pdf-tools' : '/es/herramientas-pdf'} className="btn-primary text-base px-8 py-4">
             {t('home.heroCtaMain')}
             <ArrowRight size={20} />
           </Link>
