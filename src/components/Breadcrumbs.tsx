@@ -24,7 +24,7 @@ export default function Breadcrumbs({ overrides }: BreadcrumbsProps) {
         {crumbs.map((crumb, i) => {
           const isLast = i === crumbs.length - 1;
           // Convert absolute URL to relative path for Link
-          const to = crumb.url.replace('https://FlowToPDF.app', '');
+          const to = crumb.url.replace('https://flowtopdf.com', '');
           return (
             <li key={i} className="flex items-center gap-1">
               {i > 0 && (

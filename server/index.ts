@@ -30,7 +30,7 @@ app.use(
   cors({
     origin:
       process.env['NODE_ENV'] === 'production'
-        ? [process.env['SITE_URL'] ?? 'https://FlowToPDF.app']
+        ? [process.env['SITE_URL'] ?? 'https://flowtopdf.com']
         : ['http://localhost:3000', 'http://127.0.0.1:3000'],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Accept'],

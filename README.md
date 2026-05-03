@@ -84,7 +84,7 @@ Copy `.env.example` to `.env` and configure as needed:
 
 | Variable                  | Default                    | Description                                          |
 |---------------------------|----------------------------|------------------------------------------------------|
-| `SITE_URL`                | `https://FlowToPDF.app`  | Public URL of the site (used in canonical URLs)      |
+| `SITE_URL`                | `https://flowtopdf.com`  | Public URL of the site (used in canonical URLs)      |
 | `CONTACT_EMAIL`           | —                          | Contact email shown in footer / contact page         |
 | `MAX_FILE_SIZE_MB`        | `50`                       | Maximum upload size in megabytes                     |
 | `ENABLE_ADSENSE`          | `false`                    | Set to `true` to render AdSense units                |

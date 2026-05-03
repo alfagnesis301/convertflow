@@ -23,7 +23,7 @@ export interface BreadcrumbItem {
 
 // ─── Base config ─────────────────────────────────────────────────────────────
 
-const SITE_URL = 'https://FlowToPDF.app';
+const SITE_URL = 'https://flowtopdf.com';
 const SITE_NAME = 'FlowToPDF';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
