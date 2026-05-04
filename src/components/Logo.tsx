@@ -4,9 +4,9 @@ interface LogoProps {
 }
 
 const sizeMap = {
-  sm: { svg: 28, text: 'text-lg' },
-  md: { svg: 36, text: 'text-xl' },
-  lg: { svg: 48, text: 'text-2xl' },
+  sm: { svg: 32, text: 'text-lg' },
+  md: { svg: 40, text: 'text-xl' },
+  lg: { svg: 52, text: 'text-2xl' },
 };
 
 export function Logo({ size = 'md', className = '' }: LogoProps) {
@@ -17,55 +17,93 @@ export function Logo({ size = 'md', className = '' }: LogoProps) {
       <svg
         width={svg}
         height={svg}
-        viewBox="0 0 48 48"
+        viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
+        {/* Flowing waves under the document */}
+        <path
+          d="M2 44 C 10 38, 18 50, 28 44 C 38 38, 46 50, 56 44"
+          stroke="url(#wave-gradient-1)"
+          strokeWidth="3"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.95"
+        />
+        <path
+          d="M4 50 C 12 44, 20 56, 30 50 C 40 44, 48 56, 58 50"
+          stroke="url(#wave-gradient-2)"
+          strokeWidth="3"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.85"
+        />
+        <path
+          d="M6 56 C 14 50, 22 62, 32 56 C 42 50, 50 62, 60 56"
+          stroke="url(#wave-gradient-3)"
+          strokeWidth="3"
+          strokeLinecap="round"
+          fill="none"
+          opacity="0.7"
+        />
+
         {/* Document body */}
-        <rect x="6" y="4" width="28" height="36" rx="4" fill="url(#logo-gradient)" />
-        {/* Folded corner */}
-        <path d="M28 4 L34 10 L28 10 Z" fill="white" fillOpacity="0.25" />
-        {/* Document lines */}
-        <rect x="11" y="18" width="18" height="2.5" rx="1.25" fill="white" fillOpacity="0.7" />
-        <rect x="11" y="23" width="14" height="2.5" rx="1.25" fill="white" fillOpacity="0.5" />
-        <rect x="11" y="28" width="16" height="2.5" rx="1.25" fill="white" fillOpacity="0.5" />
-        {/* Circular arrows (conversion symbol) */}
-        <circle cx="37" cy="34" r="9" fill="white" />
+        <rect
+          x="16"
+          y="6"
+          width="32"
+          height="38"
+          rx="4"
+          fill="white"
+          stroke="#E2E8F0"
+          strokeWidth="1.5"
+        />
+
+        {/* Folded corner (red/orange) */}
         <path
-          d="M32 34 C32 31.24 34.24 29 37 29"
-          stroke="url(#logo-gradient)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
+          d="M40 6 L48 14 L40 14 Z"
+          fill="#EF4444"
         />
         <path
-          d="M37 29 L35 27 M37 29 L39 27"
-          stroke="url(#logo-gradient)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          d="M40 6 L40 14 L48 14"
+          stroke="#DC2626"
+          strokeWidth="0.5"
           fill="none"
         />
+
+        {/* PDF "A" symbol in red */}
         <path
-          d="M42 34 C42 36.76 39.76 39 37 39"
-          stroke="url(#logo-gradient)"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M37 39 L39 41 M37 39 L35 41"
-          stroke="url(#logo-gradient)"
-          strokeWidth="2"
+          d="M27 28 L32 18 L37 28 M29 25 L35 25"
+          stroke="#DC2626"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
           fill="none"
         />
+
+        {/* Arrow pointing right */}
+        <path
+          d="M44 36 L54 36 L54 32 L60 38 L54 44 L54 40 L44 40 Z"
+          fill="url(#arrow-gradient)"
+        />
+
         <defs>
-          <linearGradient id="logo-gradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+          <linearGradient id="wave-gradient-1" x1="0" y1="44" x2="64" y2="44" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#06B6D4" />
+            <stop offset="1" stopColor="#3B82F6" />
+          </linearGradient>
+          <linearGradient id="wave-gradient-2" x1="0" y1="50" x2="64" y2="50" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#0EA5E9" />
+            <stop offset="1" stopColor="#2563EB" />
+          </linearGradient>
+          <linearGradient id="wave-gradient-3" x1="0" y1="56" x2="64" y2="56" gradientUnits="userSpaceOnUse">
             <stop stopColor="#3B82F6" />
-            <stop offset="1" stopColor="#7C3AED" />
+            <stop offset="1" stopColor="#1D4ED8" />
+          </linearGradient>
+          <linearGradient id="arrow-gradient" x1="44" y1="32" x2="60" y2="44" gradientUnits="userSpaceOnUse">
+            <stop stopColor="#3B82F6" />
+            <stop offset="1" stopColor="#1D4ED8" />
           </linearGradient>
         </defs>
       </svg>
