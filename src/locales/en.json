@@ -168,6 +168,12 @@
     },
     "copyright": "© {{year}} FlowToPDF. All rights reserved."
   },
+  "categories": {
+    "pdfConverter": "PDF Converter",
+    "imageToPdf": "Image to PDF",
+    "pdfTools": "PDF Tools",
+    "officeToPdf": "Office to PDF"
+  },
   "blog": {
     "title": "FlowToPDF Blog",
     "subtitle": "Tips, guides and news about PDF tools and document conversion.",

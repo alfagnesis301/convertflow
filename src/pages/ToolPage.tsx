@@ -321,7 +321,7 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
               {
                 step: '1',
                 title: lang === 'en' ? 'Upload your file' : 'Sube tu archivo',
-                desc: lang === 'en' ? `Select your ${tool.sourceFormats[0].split('/')[1] ?? 'file'} by clicking the upload area or dragging it in.` : `Selecciona tu archivo haciendo clic en el área de subida o arrastrándolo.`,
+                desc: lang === 'en' ? `Select your file by clicking the upload area or dragging it in.` : `Selecciona tu archivo haciendo clic en el área de subida o arrastrándolo.`,
               },
               {
                 step: '2',

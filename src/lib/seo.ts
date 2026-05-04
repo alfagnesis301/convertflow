@@ -386,15 +386,27 @@ export function generateBreadcrumbs(path: string, lang: Lang): BreadcrumbItem[] 
   // Skip the language segment
   const contentSegments = segments.filter((s) => s !== 'en' && s !== 'es');
 
+  // Known acronyms that should stay fully uppercase in breadcrumbs
+  const UPPERCASE_WORDS = new Set(['pdf', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'ocr', 'html', 'csv', 'rtf', 'odt', 'docx', 'doc', 'xlsx', 'xls', 'pptx', 'ppt', 'md', 'txt']);
+  // Small words that should stay lowercase (unless first word)
+  const LOWERCASE_WORDS = new Set(['to', 'a', 'an', 'and', 'or', 'of', 'in', 'on', 'at']);
+
+  function slugToName(slug: string): string {
+    return slug
+      .split('-')
+      .map((w, i) => {
+        const lower = w.toLowerCase();
+        if (UPPERCASE_WORDS.has(lower)) return lower.toUpperCase();
+        if (i > 0 && LOWERCASE_WORDS.has(lower)) return lower;
+        return lower.charAt(0).toUpperCase() + lower.slice(1);
+      })
+      .join(' ');
+  }
+
   let accumulated = `${SITE_URL}/${lang}`;
   for (const segment of contentSegments) {
     accumulated += `/${segment}`;
-    // Convert slug to readable name
-    const name = segment
-      .split('-')
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(' ');
-    crumbs.push({ name, url: accumulated });
+    crumbs.push({ name: slugToName(segment), url: accumulated });
   }
 
   return crumbs;
