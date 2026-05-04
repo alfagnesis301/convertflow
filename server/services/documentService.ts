@@ -38,15 +38,12 @@ async function checkLibreOffice(): Promise<boolean> {
  */
 export async function convertWithLibreOffice(
   inputPath: string,
-  outputDir: string
+  outputDir: string,
+  targetFormat: string = 'pdf'
 ): Promise<string> {
   const available = await checkLibreOffice();
   if (!available) {
-    throw new Error(
-      'LibreOffice is not installed on this server. ' +
-      'DOCX, XLSX, PPTX, ODT, and RTF conversions require LibreOffice. ' +
-      'Install it from https://www.libreoffice.org/download/libreoffice/'
-    );
+    throw new Error('LibreOffice is not installed');
   }
 
   const { execFile } = await import('child_process');
@@ -59,7 +56,7 @@ export async function convertWithLibreOffice(
 
   await execFileAsync(cmd, [
     '--headless',
-    '--convert-to', 'pdf',
+    '--convert-to', targetFormat,
     '--outdir', outputDir,
     inputPath,
   ], {
@@ -72,7 +69,7 @@ export async function convertWithLibreOffice(
 
   // LibreOffice names the output file based on the input basename
   const inputBasename = path.basename(inputPath, path.extname(inputPath));
-  const expectedOutput = path.join(outputDir, `${inputBasename}.pdf`);
+  const expectedOutput = path.join(outputDir, `${inputBasename}.${targetFormat}`);
 
   if (!fs.existsSync(expectedOutput)) {
     throw new Error('LibreOffice conversion did not produce an output file.');

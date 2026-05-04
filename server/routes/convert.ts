@@ -30,6 +30,38 @@ import {
   convertWithLibreOffice,
 } from '../services/documentService';
 
+// ─── MIME type → file extension normalisation ─────────────────────────────────
+// The frontend sends the HTML accept-attribute MIME types as sourceFormat.
+// The switch statement uses short extension-style keys, so we normalise here.
+
+const MIME_TO_EXT: Record<string, string> = {
+  'application/pdf': 'pdf',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'docx',
+  'application/msword': 'doc',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'xlsx',
+  'application/vnd.ms-excel': 'xls',
+  'application/vnd.openxmlformats-officedocument.presentationml.presentation': 'pptx',
+  'application/vnd.ms-powerpoint': 'ppt',
+  'application/vnd.oasis.opendocument.text': 'odt',
+  'application/rtf': 'rtf',
+  'text/rtf': 'rtf',
+  'text/plain': 'txt',
+  'text/html': 'html',
+  'text/markdown': 'md',
+  'text/csv': 'csv',
+  'image/jpeg': 'jpg',
+  'image/jpg': 'jpg',
+  'image/png': 'png',
+  'image/webp': 'webp',
+  'image/gif': 'gif',
+  'image/svg+xml': 'svg',
+  'image/*': 'image',
+};
+
+function normaliseFormat(fmt: string): string {
+  return MIME_TO_EXT[fmt] ?? fmt;
+}
+
 // ─── Router ───────────────────────────────────────────────────────────────────
 
 export const convertRouter = Router();
@@ -176,7 +208,8 @@ convertRouter.post(
         return;
       }
 
-      const { sourceFormat, targetFormat } = params;
+      const sourceFormat = normaliseFormat(params.sourceFormat);
+      const targetFormat = normaliseFormat(params.targetFormat);
       const conversionKey = `${sourceFormat}→${targetFormat}`;
 
       // ── Route to conversion handler ────────────────────────────────────────
@@ -392,7 +425,7 @@ convertRouter.post(
           break;
         }
 
-        // ── LibreOffice-based conversions ──────────────────────────────────
+        // ── LibreOffice-based conversions (Office → PDF) ───────────────────
         case 'docx→pdf':
         case 'doc→pdf':
         case 'xlsx→pdf':
@@ -404,12 +437,52 @@ convertRouter.post(
           const outDir = os.tmpdir();
           let outputPath: string | null = null;
           try {
-            outputPath = await convertWithLibreOffice(tempPaths[0]!, outDir);
+            outputPath = await convertWithLibreOffice(tempPaths[0]!, outDir, 'pdf');
             cleanupService.register(outputPath);
             const resultBuffer = fs.readFileSync(outputPath);
             const originalName = (req.files as Express.Multer.File[])?.[0]?.originalname ?? 'file';
             const baseName = path.basename(originalName, path.extname(originalName));
             sendFile(res, resultBuffer, `${baseName}.pdf`, 'application/pdf', [
+              ...tempPaths,
+              outputPath,
+            ]);
+          } catch (err) {
+            const msg = err instanceof Error ? err.message : 'Conversion failed.';
+            cleanupService.deleteMany(tempPaths);
+            if (outputPath) cleanupService.deleteNow(outputPath);
+            const isNotInstalled = msg.includes('LibreOffice is not installed');
+            res.status(isNotInstalled ? 501 : 500).json({ error: msg });
+          }
+          break;
+        }
+
+        // ── PDF to Word / other formats (LibreOffice) ──────────────────────
+        case 'pdf→docx':
+        case 'pdf→word':
+        case 'pdf→xlsx':
+        case 'pdf→pptx': {
+          const extMap: Record<string, string> = {
+            'pdf→docx': 'docx',
+            'pdf→word': 'docx',
+            'pdf→xlsx': 'xlsx',
+            'pdf→pptx': 'pptx',
+          };
+          const mimeMap: Record<string, string> = {
+            docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+          };
+          const outExt = extMap[conversionKey] ?? 'docx';
+          const outMime = mimeMap[outExt] ?? 'application/octet-stream';
+          const outDir = os.tmpdir();
+          let outputPath: string | null = null;
+          try {
+            outputPath = await convertWithLibreOffice(tempPaths[0]!, outDir, outExt);
+            cleanupService.register(outputPath);
+            const resultBuffer = fs.readFileSync(outputPath);
+            const originalName = (req.files as Express.Multer.File[])?.[0]?.originalname ?? 'file';
+            const baseName = path.basename(originalName, path.extname(originalName));
+            sendFile(res, resultBuffer, `${baseName}.${outExt}`, outMime, [
               ...tempPaths,
               outputPath,
             ]);

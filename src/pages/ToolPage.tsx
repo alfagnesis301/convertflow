@@ -130,7 +130,7 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
 
     try {
       const formData = new FormData();
-      files.forEach((f) => formData.append('file', f));
+      files.forEach((f) => formData.append('files', f));
       formData.append('sourceFormat', tool!.sourceFormats[0]);
       formData.append('targetFormat', tool!.targetFormat);
       Object.entries(options).forEach(([k, v]) => {
@@ -143,6 +143,13 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({})) as { error?: string };
+        if (response.status === 501) {
+          throw new Error(
+            lang === 'en'
+              ? 'This conversion is not available on our free server. Try a desktop app like LibreOffice (free) for this file type.'
+              : 'Esta conversión no está disponible en nuestro servidor gratuito. Prueba una aplicación de escritorio como LibreOffice (gratuita) para este tipo de archivo.'
+          );
+        }
         throw new Error(errorData.error ?? t('errors.conversionFailed'));
       }
 
