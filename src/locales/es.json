@@ -77,13 +77,89 @@
     "heroCtaSecondary": "Ver todas las herramientas"
   },
   "tools": {
-    "pdf-to-word": { "name": "PDF a Word", "desc": "Convierte archivos PDF a documentos Word (DOCX) editables conservando el formato." },
-    "word-to-pdf": { "name": "Word a PDF", "desc": "Transforma documentos Word (DOCX, DOC) en archivos PDF al instante." },
-    "jpg-to-pdf": { "name": "JPG a PDF", "desc": "Convierte imágenes JPG a PDF con tamaño de página y márgenes personalizables." },
+    "pdf-to-word": {
+      "name": "PDF a Word",
+      "desc": "Convierte archivos PDF a documentos Word (DOCX) editables conservando el formato.",
+      "longDesc": "El conversor PDF a Word de FlowToPDF transforma tus archivos PDF en documentos DOCX completamente editables, conservando el texto, encabezados, tablas y la mayor parte del formato. Es la solución perfecta cuando necesitas actualizar o reutilizar el contenido de un PDF que fue creado originalmente en Word u otro editor de texto. La conversión se realiza en nuestros servidores y tus archivos se eliminan automáticamente para proteger tu privacidad.",
+      "useCases": [
+        "Editar un contrato o propuesta en PDF que no puedes modificar en su formato actual",
+        "Extraer y reutilizar texto de un informe PDF para crear un nuevo documento",
+        "Actualizar un formulario PDF antiguo que no tiene campos editables",
+        "Convertir una factura PDF recibida a DOCX para editarla y personalizarla",
+        "Transformar un currículum en PDF en un documento Word editable"
+      ],
+      "faqs": [
+        { "q": "¿Se conservará el formato tras la conversión?", "a": "El formato se conserva con la mayor precisión posible. Los PDFs nativos (creados desde Word) se convierten muy bien. Los PDFs escaneados pueden perder algo de formato y requieren OCR para mejores resultados." },
+        { "q": "¿Puedo convertir PDFs escaneados a Word?", "a": "Se admite la extracción básica de texto de PDFs escaneados, pero para mejores resultados con documentos escaneados recomendamos usar primero nuestra herramienta OCR PDF." },
+        { "q": "¿Qué versión de DOCX produce la conversión?", "a": "El archivo de salida es un DOCX estándar compatible con Microsoft Word 2010 o posterior, LibreOffice y Google Docs." },
+        { "q": "¿Cuánto tarda la conversión?", "a": "La mayoría de los PDFs se convierten en menos de 30 segundos. Los documentos complejos con imágenes y tablas pueden tardar hasta un minuto." },
+        { "q": "¿Hay un límite de páginas para la conversión?", "a": "No hay límite de páginas, pero el tamaño del archivo está limitado a 50 MB. Los documentos muy grandes pueden tardar más." }
+      ],
+      "limitations": "La calidad de la conversión depende del origen del PDF. Los PDFs escaneados pueden dar resultados de menor fidelidad sin preprocesamiento OCR. Los diseños complejos con columnas pueden no convertirse perfectamente."
+    },
+    "word-to-pdf": {
+      "name": "Word a PDF",
+      "desc": "Transforma documentos Word (DOCX, DOC) en archivos PDF al instante.",
+      "longDesc": "Convierte cualquier documento Word (DOCX o DOC) a un PDF profesional sin necesitar Microsoft Word instalado. El conversor Word a PDF de FlowToPDF usa LibreOffice en el servidor para renderizar con fidelidad fuentes, imágenes, tablas, encabezados, pies de página y el diseño de página. El PDF resultante está listo para compartir, imprimir o archivar. La conversión es gratuita, rápida y no requiere registro.",
+      "useCases": [
+        "Convertir un currículum o CV a PDF antes de enviarlo a una oferta de trabajo",
+        "Transformar un informe Word en PDF para una entrega oficial",
+        "Convertir una factura Word a PDF para compartirla profesionalmente con clientes",
+        "Crear un PDF desde una plantilla DOCX para garantizar un formato consistente",
+        "Convertir una carta Word a PDF para conservar el formato en cualquier dispositivo"
+      ],
+      "faqs": [
+        { "q": "¿El PDF de salida se ve exactamente igual que mi documento Word?", "a": "En la mayoría de los casos, sí. Las fuentes, imágenes, tablas y el diseño se conservan. Los documentos con fuentes poco comunes pueden mostrar pequeñas diferencias." },
+        { "q": "¿Puedo convertir archivos DOC (no solo DOCX)?", "a": "Sí. Se admiten tanto DOC como DOCX." },
+        { "q": "¿Aparecerán los cambios registrados y comentarios en el PDF?", "a": "Por defecto, se muestran los cambios aceptados. Para ocultarlos, acepta o rechaza todos los cambios en Word antes de convertir." },
+        { "q": "¿Se conservan las imágenes incrustadas?", "a": "Sí. Todas las imágenes del documento Word se incluyen en el PDF resultante con su calidad original." },
+        { "q": "¿Hay un límite de páginas o tamaño?", "a": "El tamaño máximo del archivo es 50 MB. No hay límite de páginas." }
+      ],
+      "limitations": "Los documentos con fuentes no disponibles en nuestro servidor pueden usar una fuente similar, causando pequeñas diferencias de diseño. Las macros y el contenido VBA no se ejecutan."
+    },
+    "jpg-to-pdf": {
+      "name": "JPG a PDF",
+      "desc": "Convierte imágenes JPG a PDF con tamaño de página y márgenes personalizables.",
+      "longDesc": "Transforma tus fotos e imágenes JPG en documentos PDF profesionales con el conversor JPG a PDF de FlowToPDF. Puedes combinar varios archivos JPG en un único PDF o convertirlos individualmente, y elegir entre tamaños de página estándar como A4, Carta o ajustar a la imagen. El conversor conserva la calidad de tus imágenes y produce un PDF limpio listo para compartir, imprimir o archivar, en segundos y de forma gratuita.",
+      "useCases": [
+        "Convertir un documento JPG escaneado a PDF para entrega oficial",
+        "Combinar varias fotos JPG en un único PDF portafolio",
+        "Transformar una imagen JPG de un recibo o factura en PDF para contabilidad",
+        "Convertir capturas de pantalla JPG en un informe PDF",
+        "Crear un álbum de fotos PDF a partir de varias imágenes JPG"
+      ],
+      "faqs": [
+        { "q": "¿Puedo combinar varias imágenes JPG en un PDF?", "a": "Sí. Selecciona varios archivos JPG y se combinarán en un único PDF, con una imagen por página." },
+        { "q": "¿Qué tamaños de página están disponibles?", "a": "Puedes elegir A4, Carta, Legal o ajustar a la imagen (donde el tamaño de página coincide con las dimensiones de tu imagen)." },
+        { "q": "¿Se reducirá la calidad de mi imagen?", "a": "La calidad de imagen se conserva a un nivel alto. Las imágenes muy grandes pueden comprimirse ligeramente para optimizar el tamaño del archivo." },
+        { "q": "¿Cuál es el tamaño máximo por imagen?", "a": "Cada archivo JPG puede tener hasta 50 MB. Al combinar varias imágenes, el tamaño total debe estar dentro de los límites." },
+        { "q": "¿Puedo definir márgenes para las páginas del PDF?", "a": "Sí. Puedes seleccionar entre opciones de margen preestablecidas (ninguno, pequeño, normal, grande) antes de convertir." }
+      ],
+      "limitations": "La calidad de imagen se conserva, pero las imágenes de muy alta resolución pueden submuestrearse ligeramente para mantener el tamaño del PDF en niveles manejables."
+    },
     "png-to-pdf": { "name": "PNG a PDF", "desc": "Convierte imágenes PNG a PDF, con fondo blanco en zonas transparentes." },
     "webp-to-pdf": { "name": "WebP a PDF", "desc": "Convierte imágenes WebP modernas a un documento PDF de alta calidad." },
     "gif-to-pdf": { "name": "GIF a PDF", "desc": "Convierte imágenes GIF (primer fotograma) a un archivo PDF." },
-    "pdf-to-jpg": { "name": "PDF a JPG", "desc": "Extrae páginas de un PDF y guarda cada una como imagen JPG." },
+    "pdf-to-jpg": {
+      "name": "PDF a JPG",
+      "desc": "Extrae páginas de un PDF y guarda cada una como imagen JPG.",
+      "longDesc": "Convierte páginas de PDF a imágenes JPG de alta calidad con la herramienta PDF a JPG de FlowToPDF. Cada página de tu PDF se renderiza como un archivo JPG separado, facilitando compartir páginas individuales, usar contenido de PDF en presentaciones o previsualizar documentos como imágenes. Puedes elegir la calidad de salida y todas las páginas se empaquetan en un archivo ZIP para descargar. El procesamiento es rápido, gratuito y seguro.",
+      "useCases": [
+        "Extraer una página concreta de un PDF para usarla como imagen en una presentación",
+        "Convertir un folleto PDF a imágenes JPG para compartir en redes sociales",
+        "Transformar diapositivas PDF en imágenes para incrustarlas en una web",
+        "Extraer páginas PDF como miniaturas o previsualizaciones",
+        "Convertir una página de portafolio PDF a JPG para compartir por email"
+      ],
+      "faqs": [
+        { "q": "¿Obtendré un JPG por página?", "a": "Sí. Cada página de tu PDF se convierte en un archivo JPG separado. Todos los archivos se agrupan en una descarga ZIP." },
+        { "q": "¿Qué calidad de imagen puedo elegir?", "a": "Puedes seleccionar entre calidad baja, media y alta. La alta calidad produce archivos más grandes con imágenes más nítidas." },
+        { "q": "¿A qué resolución (DPI) se generan las imágenes?", "a": "Las imágenes se renderizan a 150 DPI por defecto (calidad media) o hasta 300 DPI en calidad alta." },
+        { "q": "¿Puedo convertir solo una página del PDF?", "a": "Puedes usar primero nuestra herramienta Dividir PDF para aislar una sola página y luego convertir ese PDF de una página a JPG." },
+        { "q": "¿Son compatibles los PDFs escaneados?", "a": "Sí. Los PDFs escaneados se tratan como imágenes y se generarán como JPGs de alta calidad a la resolución elegida." }
+      ],
+      "limitations": "Los PDFs muy grandes pueden tardar más en procesarse. Cada página se renderiza individualmente, por lo que el tamaño del archivo escala con el número de páginas y la calidad elegida."
+    },
     "pdf-to-png": { "name": "PDF a PNG", "desc": "Convierte páginas de PDF a imágenes PNG de alta calidad." },
     "pdf-to-text": { "name": "PDF a Texto", "desc": "Extrae todo el contenido de texto de un PDF como archivo de texto plano." },
     "text-to-pdf": { "name": "Texto a PDF", "desc": "Convierte archivos de texto plano (.txt) a un PDF bien formateado." },
@@ -91,12 +167,126 @@
     "markdown-to-pdf": { "name": "Markdown a PDF", "desc": "Convierte archivos Markdown a un documento PDF con formato." },
     "excel-to-pdf": { "name": "Excel a PDF", "desc": "Convierte hojas de cálculo Excel (XLSX, XLS) a formato PDF." },
     "powerpoint-to-pdf": { "name": "PowerPoint a PDF", "desc": "Convierte presentaciones de PowerPoint (PPTX, PPT) a PDF." },
-    "merge-pdf": { "name": "Unir PDF", "desc": "Combina varios archivos PDF en un único documento." },
-    "split-pdf": { "name": "Dividir PDF", "desc": "Divide un PDF en páginas individuales o rangos personalizados." },
-    "compress-pdf": { "name": "Comprimir PDF", "desc": "Reduce el tamaño del archivo PDF manteniendo la calidad." },
-    "rotate-pdf": { "name": "Rotar PDF", "desc": "Rota todas o algunas páginas de un PDF 90, 180 o 270 grados." },
-    "protect-pdf": { "name": "Proteger PDF", "desc": "Añade una contraseña a tu PDF para evitar accesos no autorizados." },
-    "unlock-pdf": { "name": "Desbloquear PDF", "desc": "Elimina la protección por contraseña de un PDF (necesitas conocerla)." },
+    "merge-pdf": {
+      "name": "Unir PDF",
+      "desc": "Combina varios archivos PDF en un único documento.",
+      "longDesc": "La herramienta Unir PDF de FlowToPDF te permite combinar dos o más archivos PDF en un único documento con solo unos clics. Sube tus archivos, ordénalos como prefieras y descarga el resultado combinado al instante. Es ideal para ensamblar informes, combinar páginas escaneadas o consolidar facturas y contratos, todo sin instalar ningún software.",
+      "useCases": [
+        "Combinar varias páginas escaneadas en un único documento PDF",
+        "Unir varias facturas o recibos en un solo archivo para contabilidad",
+        "Ensamblar un informe a partir de capítulos PDF exportados por separado",
+        "Combinar una carta de presentación y un currículum en un PDF para solicitudes de empleo",
+        "Unir varios contratos o acuerdos en un único documento para firmar"
+      ],
+      "faqs": [
+        { "q": "¿Cuántos PDFs puedo unir a la vez?", "a": "Puedes unir hasta 20 archivos PDF en una sola operación. Para lotes más grandes, únelos en grupos y luego combina los resultados." },
+        { "q": "¿Se conservará el orden de las páginas?", "a": "Sí. Las páginas aparecen en el orden en que organizas los archivos subidos. Puedes arrastrar y soltar para reordenarlos antes de unir." },
+        { "q": "¿Puedo unir PDFs protegidos con contraseña?", "a": "Los PDFs protegidos con contraseña deben desbloquearse primero con nuestra herramienta Desbloquear PDF." },
+        { "q": "¿La unión afecta la calidad de mis PDFs?", "a": "No. La operación de unión combina los archivos sin recodificarlos, por lo que la calidad se conserva completamente." },
+        { "q": "¿Qué ocurre con los marcadores y enlaces en los PDFs unidos?", "a": "Los enlaces internos de cada PDF se conservan. Los marcadores entre documentos pueden no transferirse, pero el contenido y el formato de cada página permanecen intactos." }
+      ],
+      "limitations": "Máximo de 20 archivos por operación de unión. Los PDFs protegidos con contraseña deben desbloquearse antes de unirlos."
+    },
+    "split-pdf": {
+      "name": "Dividir PDF",
+      "desc": "Divide un PDF en páginas individuales o rangos personalizados.",
+      "longDesc": "La herramienta Dividir PDF de FlowToPDF facilita dividir un PDF grande en piezas más pequeñas, ya sea que necesites cada página como un archivo separado o solo extraer un rango específico de páginas. Sube tu PDF, especifica las páginas o rangos que necesitas y descarga los resultados como archivos individuales o un cómodo archivo ZIP. No se necesita software y tus archivos se eliminan automáticamente.",
+      "useCases": [
+        "Extraer un capítulo específico de un largo informe PDF",
+        "Separar páginas escaneadas de un documento de varias páginas",
+        "Dividir un libro PDF en capítulos individuales para compartirlos más fácilmente",
+        "Extraer solo las páginas que necesitas enviar por correo electrónico",
+        "Dividir un PDF en secciones antes de editar cada parte por separado"
+      ],
+      "faqs": [
+        { "q": "¿Puedo dividir por rangos de páginas personalizados?", "a": "Sí. Puedes especificar páginas individuales (p. ej. 1, 3, 5) o rangos (p. ej. 1-3, 7-10) para extraer exactamente las páginas que necesitas." },
+        { "q": "¿Cómo recibiré los archivos divididos?", "a": "Si divides en varias partes, el resultado se proporcionará como un archivo ZIP que contiene cada PDF por separado." },
+        { "q": "¿Hay un límite de páginas para dividir?", "a": "No hay límite de páginas. Puedes dividir PDFs con cientos de páginas siempre que el tamaño total del archivo sea inferior a 50 MB." },
+        { "q": "¿Se conservarán las anotaciones y los campos de formulario?", "a": "Sí. Las anotaciones, campos de formulario y contenido incrustado se conservan en cada segmento dividido." },
+        { "q": "¿Puedo dividir un PDF protegido con contraseña?", "a": "No. Primero debes eliminar la contraseña con nuestra herramienta Desbloquear PDF y luego dividir el archivo." }
+      ],
+      "limitations": "El tamaño máximo del archivo es 50 MB. Los PDFs protegidos con contraseña deben desbloquearse antes de dividirlos."
+    },
+    "compress-pdf": {
+      "name": "Comprimir PDF",
+      "desc": "Reduce el tamaño del archivo PDF manteniendo la calidad.",
+      "longDesc": "La herramienta Comprimir PDF de FlowToPDF utiliza algoritmos de compresión avanzados para reducir el tamaño de tus archivos PDF sin sacrificar la legibilidad. Ya sea que necesites enviar un documento por correo electrónico, subirlo a un formulario web o ahorrar espacio de almacenamiento, nuestro compresor te permite elegir el equilibrio adecuado entre tamaño de archivo y calidad de imagen. El proceso es totalmente automático: sube, selecciona un nivel de compresión y descarga tu PDF más pequeño en segundos.",
+      "useCases": [
+        "Reducir un PDF antes de adjuntarlo a un correo con límite de tamaño",
+        "Comprimir documentos escaneados para ahorrar espacio en la nube",
+        "Optimizar informes y presentaciones PDF para subida web más rápida",
+        "Reducir grandes portafolios PDF para compartir por aplicaciones de mensajería",
+        "Preparar PDFs para servicios de impresión con límites de tamaño de archivo"
+      ],
+      "faqs": [
+        { "q": "¿La compresión reducirá la calidad de mi PDF?", "a": "Con el nivel de compresión 'bajo', la pérdida de calidad es mínima y apenas perceptible. Los niveles de compresión más altos pueden reducir más notablemente la calidad de las imágenes, pero el texto permanece nítido." },
+        { "q": "¿Cuánto puedo comprimir un PDF?", "a": "Los resultados varían según el contenido del archivo. Los PDFs con muchas imágenes de alta resolución pueden reducirse entre un 50 y un 80%. Los PDFs con solo texto pueden tener reducciones menores." },
+        { "q": "¿Hay un límite de tamaño para la compresión?", "a": "Puedes subir PDFs de hasta 50 MB. Para archivos más grandes, intenta dividir el PDF primero y luego comprimir cada parte." },
+        { "q": "¿Se conservarán las fuentes y el diseño?", "a": "Sí. La compresión se aplica a las imágenes incrustadas y los metadatos. Las fuentes, el texto y la estructura del diseño no se ven afectados." },
+        { "q": "¿Puedo comprimir un PDF protegido con contraseña?", "a": "Primero debes eliminar la protección con contraseña usando nuestra herramienta Desbloquear PDF y luego comprimir el archivo." }
+      ],
+      "limitations": "La eficacia de la compresión depende del contenido del PDF. Los archivos que ya están comprimidos o contienen principalmente texto pueden tener una reducción de tamaño limitada."
+    },
+    "rotate-pdf": {
+      "name": "Rotar PDF",
+      "desc": "Rota todas o algunas páginas de un PDF 90, 180 o 270 grados.",
+      "longDesc": "¿Escaneaste un documento de lado accidentalmente? La herramienta Rotar PDF te permite corregir la orientación de cualquier página de tu PDF en segundos. Elige rotar todas las páginas a la vez o selecciona páginas específicas, y elige un ángulo de rotación de 90°, 180° o 270°. El PDF corregido está listo para descargar de inmediato, sin software, completamente gratis y procesado de forma segura en nuestros servidores.",
+      "useCases": [
+        "Corregir páginas escaneadas en orientación incorrecta",
+        "Rotar un PDF en formato horizontal a vertical para una lectura más fácil",
+        "Corregir una sola página subida accidentalmente al revés",
+        "Rotar un PDF para imprimirlo en la orientación correcta",
+        "Ajustar páginas de contratos escaneados antes de compartirlos o firmarlos"
+      ],
+      "faqs": [
+        { "q": "¿Puedo rotar solo páginas específicas?", "a": "Sí. Puedes elegir rotar todas las páginas o especificar números de página individuales para rotar solo esas páginas." },
+        { "q": "¿Qué ángulos de rotación son compatibles?", "a": "Puedes rotar páginas 90°, 180° o 270° en el sentido de las agujas del reloj." },
+        { "q": "¿La rotación afectará la calidad de mi PDF?", "a": "No. La rotación de páginas es una operación de metadatos y no recodifica ni reduce la calidad de ningún contenido." },
+        { "q": "¿Puedo rotar un PDF escaneado?", "a": "Sí. La rotación funciona en todos los PDFs, incluidos los documentos escaneados. La orientación de la página se corregirá pero el texto no se reconocerá nuevamente." },
+        { "q": "¿Hay un límite de páginas?", "a": "No hay límite de páginas. Puedes rotar cualquier número de páginas siempre que el archivo sea inferior a 50 MB." }
+      ],
+      "limitations": "El tamaño máximo del archivo es 50 MB. La rotación se aplica solo a la orientación de la página: no realiza OCR en el contenido escaneado."
+    },
+    "protect-pdf": {
+      "name": "Proteger PDF",
+      "desc": "Añade una contraseña a tu PDF para evitar accesos no autorizados.",
+      "longDesc": "Mantén tus documentos confidenciales privados añadiendo protección por contraseña con la herramienta Proteger PDF de FlowToPDF. Puedes establecer una contraseña de apertura (requerida para ver el PDF) y restringir la impresión o la copia. El cifrado usa algoritmos AES-128 o AES-256 estándar de la industria, garantizando que tu archivo esté protegido contra accesos no autorizados. El proceso tarda solo segundos y ningún dato se almacena en nuestros servidores tras el procesamiento.",
+      "useCases": [
+        "Proteger un informe confidencial antes de compartirlo por correo electrónico",
+        "Añadir contraseña a documentos legales que contienen información personal",
+        "Proteger estados financieros o documentos fiscales almacenados en la nube",
+        "Restringir la impresión y copia de contenido propietario",
+        "Proteger contratos de clientes antes de enviarlos para firma"
+      ],
+      "faqs": [
+        { "q": "¿Qué estándar de cifrado se usa?", "a": "FlowToPDF usa cifrado AES-128 por defecto, que es el estándar de la industria para la protección de PDFs con contraseña." },
+        { "q": "¿Puedo establecer contraseñas diferentes para apertura y edición?", "a": "Puedes establecer una contraseña de propietario que restrinja la edición, impresión y copia por separado de la contraseña de apertura." },
+        { "q": "¿El destinatario necesitará software especial para abrir mi PDF?", "a": "No. Cualquier lector de PDF estándar (Adobe Acrobat, Vista Previa, Chrome, etc.) admite PDFs protegidos con contraseña." },
+        { "q": "¿Qué ocurre si olvido la contraseña?", "a": "No hay forma de recuperar una contraseña olvidada. Asegúrate de guardar tu contraseña de forma segura antes de proteger el archivo." },
+        { "q": "¿Es seguro subir mi archivo confidencial?", "a": "Sí. Tu archivo se procesa a través de una conexión HTTPS cifrada y se elimina de nuestros servidores automáticamente tras la conversión." }
+      ],
+      "limitations": "No pierdas tu contraseña: no hay opción de recuperación. La fortaleza del cifrado está limitada a AES-128 en el plan gratuito."
+    },
+    "unlock-pdf": {
+      "name": "Desbloquear PDF",
+      "desc": "Elimina la protección por contraseña de un PDF (necesitas conocerla).",
+      "longDesc": "Elimina la protección por contraseña de tus archivos PDF de forma rápida y segura con la herramienta Desbloquear PDF de FlowToPDF. Sube el PDF protegido, introduce la contraseña correcta y descarga una versión desbloqueada que puedes abrir, editar y compartir libremente. Esta herramienta solo funciona si conoces la contraseña correcta: no descifra ni evita el cifrado, garantizando un uso legal y ético.",
+      "useCases": [
+        "Eliminar una contraseña de apertura olvidada de tu propio PDF",
+        "Desbloquear un PDF enviado por un cliente para permitir su edición",
+        "Eliminar restricciones de impresión de un PDF que tienes permiso para imprimir",
+        "Desbloquear un PDF antes de combinarlo con otros documentos",
+        "Eliminar restricciones de propietario para permitir resaltado y anotaciones"
+      ],
+      "faqs": [
+        { "q": "¿Necesito conocer la contraseña para desbloquear el PDF?", "a": "Sí. Debes proporcionar la contraseña correcta para desbloquear el archivo. Esta herramienta no descifra ni evita el cifrado." },
+        { "q": "¿Qué tipos de protección PDF se pueden eliminar?", "a": "Esta herramienta elimina tanto las contraseñas de apertura (requeridas para ver el PDF) como las contraseñas de propietario (que restringen la edición, impresión y copia)." },
+        { "q": "¿Es legal desbloquear un PDF?", "a": "Desbloquear es legal cuando eres propietario del documento o tienes permiso explícito del propietario. Nunca desbloquees documentos sobre los que no tienes derechos." },
+        { "q": "¿Cambiará el contenido de mi PDF después de desbloquearlo?", "a": "No. Solo se elimina la protección por contraseña. Todo el contenido, formato y datos incrustados permanecen sin cambios." },
+        { "q": "¿Qué pasa si introduzco la contraseña incorrecta?", "a": "El desbloqueo fallará y recibirás un mensaje de error. Verifica la contraseña e inténtalo de nuevo." }
+      ],
+      "limitations": "Debes conocer la contraseña correcta para desbloquear un PDF. Esta herramienta no puede descifrar ni evitar el cifrado en archivos con contraseña desconocida."
+    },
     "reorder-pdf": { "name": "Reordenar páginas PDF", "desc": "Arrastra y suelta para reorganizar las páginas de tu PDF." },
     "extract-pages": { "name": "Extraer páginas", "desc": "Extrae páginas concretas de un PDF en un nuevo documento." },
     "image-to-pdf": { "name": "Imágenes a PDF", "desc": "Combina varias imágenes (JPG, PNG, WebP) en un único archivo PDF." },

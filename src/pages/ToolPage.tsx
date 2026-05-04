@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import { Navigate } from 'react-router-dom';
-import { AlertTriangle, CheckCircle, Settings } from 'lucide-react';
-import { useTranslation } from '../lib/i18n';
+import { AlertTriangle, CheckCircle, Settings, Info } from 'lucide-react';
+import { useTranslation, tRaw } from '../lib/i18n';
 import { getToolBySlug, getToolById } from '../lib/toolsConfig';
 import type { Tool, ToolOption } from '../lib/toolsConfig';
 import type { Lang } from '../lib/i18n';
@@ -177,8 +177,15 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
   const meta = generateMetaTags(tool.id, lang);
   const toolName = t(`tools.${tool.id}.name`);
   const toolDesc = t(`tools.${tool.id}.desc`);
+  const toolLongDesc = t(`tools.${tool.id}.longDesc`);
+  const toolLimitations = t(`tools.${tool.id}.limitations`);
 
-  const faqs = lang === 'en'
+  // Use tool-specific use cases if available
+  const useCases = tRaw<string[]>(`tools.${tool.id}.useCases`, lang);
+
+  // Use tool-specific FAQs if available, otherwise fall back to generic ones
+  const toolFaqsRaw = tRaw<{ q: string; a: string }[]>(`tools.${tool.id}.faqs`, lang);
+  const genericFaqs = lang === 'en'
     ? [
         { question: `Is ${toolName} free?`, answer: `Yes, ${toolName} is completely free to use. No registration or payment required.` },
         { question: `What is the maximum file size?`, answer: `You can upload files up to 50 MB. For larger files, try splitting them first.` },
@@ -191,10 +198,52 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
         { question: `¿Cuánto tarda la conversión?`, answer: `La mayoría de las conversiones se completan en pocos segundos. Los documentos complejos pueden tardar hasta un minuto.` },
         { question: `¿Están seguros mis archivos?`, answer: `Sí. Los archivos están cifrados en tránsito y se eliminan automáticamente de nuestros servidores después de la conversión o en 30 minutos.` },
       ];
+  const faqs = toolFaqsRaw
+    ? toolFaqsRaw.map((f) => ({ question: f.q, answer: f.a }))
+    : genericFaqs;
+
+  // HowTo JSON-LD structured data
+  const howToJsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: lang === 'en' ? `How to use ${toolName}` : `Cómo usar ${toolName}`,
+    description: toolDesc,
+    step: [
+      {
+        '@type': 'HowToStep',
+        position: 1,
+        name: lang === 'en' ? 'Upload your file' : 'Sube tu archivo',
+        text: lang === 'en'
+          ? `Select your file by clicking the upload area or dragging it into the ${toolName} tool.`
+          : `Selecciona tu archivo haciendo clic en el área de subida o arrastrándolo a la herramienta ${toolName}.`,
+      },
+      {
+        '@type': 'HowToStep',
+        position: 2,
+        name: lang === 'en' ? 'Adjust options' : 'Ajusta las opciones',
+        text: lang === 'en'
+          ? 'Set any available options to customize your output, then click Convert Now.'
+          : 'Configura las opciones disponibles para personalizar tu resultado y haz clic en Convertir ahora.',
+      },
+      {
+        '@type': 'HowToStep',
+        position: 3,
+        name: lang === 'en' ? 'Download' : 'Descarga',
+        text: lang === 'en'
+          ? 'Click the Download button to save your converted file. Files are deleted automatically after 30 minutes.'
+          : 'Haz clic en el botón Descargar para guardar tu archivo convertido. Los archivos se eliminan automáticamente en 30 minutos.',
+      },
+    ],
+  });
 
   return (
     <>
       <SEOHead meta={meta} />
+      {/* HowTo JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: howToJsonLd }}
+      />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumbs />
 
@@ -202,6 +251,12 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">{toolName}</h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">{toolDesc}</p>
+          {/* Long description for SEO-rich tools */}
+          {toolLongDesc && toolLongDesc !== `tools.${tool.id}.longDesc` && (
+            <p className="mt-3 text-base text-gray-500 dark:text-gray-400 leading-relaxed">
+              {toolLongDesc}
+            </p>
+          )}
         </div>
 
         {/* Not available */}
@@ -347,8 +402,40 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
           </div>
         </section>
 
+        {/* Use Cases */}
+        {useCases && useCases.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              {lang === 'en' ? 'Common Use Cases' : 'Casos de uso habituales'}
+            </h2>
+            <ul className="space-y-2">
+              {useCases.map((useCase, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  {useCase}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* FAQ */}
         <FAQSection faqs={faqs} title={lang === 'en' ? 'Frequently Asked Questions' : 'Preguntas frecuentes'} />
+
+        {/* Limitations info box */}
+        {toolLimitations && toolLimitations !== `tools.${tool.id}.limitations` && (
+          <div className="mt-4 flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl text-sm text-gray-600 dark:text-gray-400">
+            <Info size={16} className="shrink-0 mt-0.5 text-gray-400" />
+            <span>
+              <strong className="font-semibold text-gray-700 dark:text-gray-300">
+                {lang === 'en' ? 'Limitations: ' : 'Limitaciones: '}
+              </strong>
+              {toolLimitations}
+            </span>
+          </div>
+        )}
 
         {/* Related tools */}
         <RelatedTools currentToolId={tool.id} category={tool.category} />

@@ -9,6 +9,19 @@ import { resolve } from 'path';
 // appears during `npx vite build` is harmless — Vite handles its own ESM loading.
 // https://vitejs.dev/config/
 export default defineConfig({
+  // NOTE: vite-prerender-plugin (installed as devDependency) is ESM-only and
+  // cannot be required() in this CJS config file. To enable prerendering,
+  // add "type": "module" to package.json and convert this config to ESM, then:
+  //
+  //   import { vitePrerenderPlugin } from 'vite-prerender-plugin';
+  //   plugins: [react(), vitePrerenderPlugin({
+  //     renderTarget: '#root',
+  //     prerenderScript: new URL('./src/prerender.tsx', import.meta.url).pathname,
+  //   })],
+  //
+  // WARNING: Adding "type":"module" will break the server build (server/index.ts
+  // compiles to CJS). Separate the client and server build scripts before enabling.
+  // The src/prerender.tsx script is ready to use once this is resolved.
   plugins: [react()],
   resolve: {
     alias: {
