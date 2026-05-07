@@ -6,6 +6,7 @@ import { getToolBySlug, getToolById } from '../lib/toolsConfig';
 import type { Tool, ToolOption } from '../lib/toolsConfig';
 import type { Lang } from '../lib/i18n';
 import { generateMetaTags } from '../lib/seo';
+import { getToolSeoContent } from '../lib/toolSeoContent';
 import SEOHead from '../components/SEOHead';
 import Breadcrumbs from '../components/Breadcrumbs';
 import UploadBox from '../components/UploadBox';
@@ -177,14 +178,28 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
   const meta = generateMetaTags(tool.id, lang);
   const toolName = t(`tools.${tool.id}.name`);
   const toolDesc = t(`tools.${tool.id}.desc`);
-  const toolLongDesc = t(`tools.${tool.id}.longDesc`);
-  const toolLimitations = t(`tools.${tool.id}.limitations`);
 
-  // Use tool-specific use cases if available
-  const useCases = tRaw<string[]>(`tools.${tool.id}.useCases`, lang);
+  // Pull rich SEO content (intro, useCases, FAQs, limitations) when available
+  const seoContent = getToolSeoContent(tool.id, lang);
 
-  // Use tool-specific FAQs if available, otherwise fall back to generic ones
-  const toolFaqsRaw = tRaw<{ q: string; a: string }[]>(`tools.${tool.id}.faqs`, lang);
+  // Long description: prefer the rich SEO intro, otherwise the locale longDesc
+  const localeLongDesc = t(`tools.${tool.id}.longDesc`);
+  const toolLongDesc = seoContent?.intro
+    ?? (localeLongDesc !== `tools.${tool.id}.longDesc` ? localeLongDesc : '');
+
+  // Limitations: prefer the rich SEO content, otherwise the locale value
+  const localeLimitations = t(`tools.${tool.id}.limitations`);
+  const toolLimitations = seoContent?.limitations
+    ?? (localeLimitations !== `tools.${tool.id}.limitations` ? localeLimitations : '');
+
+  // Use cases: prefer the rich SEO data with title + description,
+  // otherwise fall back to plain string list from locales
+  const richUseCases = seoContent?.useCases;
+  const fallbackUseCases = tRaw<string[]>(`tools.${tool.id}.useCases`, lang);
+
+  // FAQ: prefer rich SEO data, otherwise locales, otherwise generic
+  const seoFaqs = seoContent?.faqs;
+  const toolFaqsRaw = !seoFaqs ? tRaw<{ q: string; a: string }[]>(`tools.${tool.id}.faqs`, lang) : undefined;
   const genericFaqs = lang === 'en'
     ? [
         { question: `Is ${toolName} free?`, answer: `Yes, ${toolName} is completely free to use. No registration or payment required.` },
@@ -198,9 +213,11 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
         { question: `¿Cuánto tarda la conversión?`, answer: `La mayoría de las conversiones se completan en pocos segundos. Los documentos complejos pueden tardar hasta un minuto.` },
         { question: `¿Están seguros mis archivos?`, answer: `Sí. Los archivos están cifrados en tránsito y se eliminan automáticamente de nuestros servidores después de la conversión o en 30 minutos.` },
       ];
-  const faqs = toolFaqsRaw
-    ? toolFaqsRaw.map((f) => ({ question: f.q, answer: f.a }))
-    : genericFaqs;
+  const faqs = seoFaqs
+    ? seoFaqs
+    : toolFaqsRaw
+      ? toolFaqsRaw.map((f) => ({ question: f.q, answer: f.a }))
+      : genericFaqs;
 
   // HowTo JSON-LD structured data
   const howToJsonLd = JSON.stringify({
@@ -252,7 +269,7 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">{toolName}</h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">{toolDesc}</p>
           {/* Long description for SEO-rich tools */}
-          {toolLongDesc && toolLongDesc !== `tools.${tool.id}.longDesc` && (
+          {toolLongDesc && (
             <p className="mt-3 text-base text-gray-500 dark:text-gray-400 leading-relaxed">
               {toolLongDesc}
             </p>
@@ -402,14 +419,36 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
           </div>
         </section>
 
-        {/* Use Cases */}
-        {useCases && useCases.length > 0 && (
+        {/* Use Cases — rich format with title + description */}
+        {richUseCases && richUseCases.length > 0 && (
+          <section className="mt-10">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              {lang === 'en' ? 'Common Use Cases' : 'Casos de uso habituales'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {richUseCases.map((useCase, i) => (
+                <div key={i} className="flex gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
+                  <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{useCase.title}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{useCase.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Use Cases — fallback simple-string format */}
+        {!richUseCases && fallbackUseCases && fallbackUseCases.length > 0 && (
           <section className="mt-10">
             <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               {lang === 'en' ? 'Common Use Cases' : 'Casos de uso habituales'}
             </h2>
             <ul className="space-y-2">
-              {useCases.map((useCase, i) => (
+              {fallbackUseCases.map((useCase, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-gray-700 dark:text-gray-300">
                   <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xs font-bold">
                     {i + 1}
@@ -425,7 +464,7 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
         <FAQSection faqs={faqs} title={lang === 'en' ? 'Frequently Asked Questions' : 'Preguntas frecuentes'} />
 
         {/* Limitations info box */}
-        {toolLimitations && toolLimitations !== `tools.${tool.id}.limitations` && (
+        {toolLimitations && (
           <div className="mt-4 flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 rounded-xl text-sm text-gray-600 dark:text-gray-400">
             <Info size={16} className="shrink-0 mt-0.5 text-gray-400" />
             <span>

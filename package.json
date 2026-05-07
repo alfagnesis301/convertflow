@@ -9,7 +9,7 @@
     "server:dev": "tsx watch server/index.ts",
     "server": "node dist/server/index.js",
     "build": "npm run build:client && npm run build:server",
-    "build:client": "tsc && vite build",
+    "build:client": "tsc && vite build && tsx scripts/prerender.mts",
     "build:server": "tsc -p tsconfig.server.json",
     "start": "node dist/server/index.js",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
