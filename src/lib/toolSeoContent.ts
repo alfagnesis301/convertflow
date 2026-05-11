@@ -394,6 +394,123 @@ export const toolSeoContent: Record<string, ToolSeoContent> = {
       ],
     },
   },
+
+  'text-to-pdf': {
+    en: {
+      intro:
+        'Convert plain text files into clean, readable PDF documents with consistent margins, page size and line wrapping. This tool is useful when you need to preserve notes, logs, transcripts, drafts or code snippets as a shareable PDF without opening a word processor.',
+      useCases: [
+        { title: 'Archive notes or transcripts', description: 'Turn meeting notes, interview transcripts or exported text into a stable PDF for storage.' },
+        { title: 'Share logs with support teams', description: 'Package plain-text logs into a PDF that is easy to attach, review and annotate.' },
+        { title: 'Create printable drafts', description: 'Convert a simple .txt draft into a paginated PDF before printing or sending for review.' },
+        { title: 'Preserve plain-text records', description: 'Keep text exports readable across devices without changing the original content.' },
+      ],
+      faqs: [
+        { question: 'What text files can I convert to PDF?', answer: 'You can upload standard .txt files encoded as plain text. For Markdown or HTML, use the dedicated Markdown to PDF or HTML to PDF tools.' },
+        { question: 'Can I choose the page size?', answer: 'Yes. You can choose common page sizes such as A4 or Letter and adjust margins before converting.' },
+        { question: 'Does the tool change my text?', answer: 'No. The text content is preserved. Long lines may wrap to fit the selected page width.' },
+        { question: 'Can I convert code or log files?', answer: 'Yes, as long as they are plain text. Very wide lines may wrap across multiple visual lines in the PDF.' },
+        { question: 'Are uploaded text files private?', answer: 'Yes. Files are uploaded over HTTPS, processed temporarily and automatically deleted within 30 minutes.' },
+      ],
+      limitations: 'Plain text does not contain rich formatting, images or tables. If you need headings, links or styled content, use Markdown to PDF or HTML to PDF instead.',
+    },
+    es: {
+      intro:
+        'Convierte archivos de texto plano en documentos PDF limpios y legibles con márgenes, tamaño de página y ajuste de línea consistentes. Es útil para conservar notas, registros, transcripciones, borradores o fragmentos de código como PDF compartible sin abrir un procesador de texto.',
+      useCases: [
+        { title: 'Archivar notas o transcripciones', description: 'Convierte notas de reuniones, entrevistas o exportaciones de texto en un PDF estable para guardar.' },
+        { title: 'Compartir logs con soporte', description: 'Empaqueta registros de texto en un PDF fácil de adjuntar, revisar y anotar.' },
+        { title: 'Crear borradores imprimibles', description: 'Convierte un borrador .txt sencillo en un PDF paginado antes de imprimirlo o enviarlo.' },
+        { title: 'Preservar registros de texto', description: 'Mantén exportaciones de texto legibles en cualquier dispositivo sin cambiar el contenido.' },
+      ],
+      faqs: [
+        { question: '¿Qué archivos de texto puedo convertir a PDF?', answer: 'Puedes subir archivos .txt estándar codificados como texto plano. Para Markdown o HTML, usa las herramientas Markdown a PDF o HTML a PDF.' },
+        { question: '¿Puedo elegir el tamaño de página?', answer: 'Sí. Puedes elegir tamaños habituales como A4 o Carta y ajustar los márgenes antes de convertir.' },
+        { question: '¿La herramienta cambia mi texto?', answer: 'No. El contenido se conserva. Las líneas largas pueden ajustarse al ancho de la página elegida.' },
+        { question: '¿Puedo convertir código o archivos log?', answer: 'Sí, siempre que sean texto plano. Las líneas muy largas pueden dividirse visualmente en varias líneas en el PDF.' },
+        { question: '¿Mis archivos de texto son privados?', answer: 'Sí. Se suben por HTTPS, se procesan temporalmente y se eliminan automáticamente en 30 minutos.' },
+      ],
+      limitations: 'El texto plano no contiene formato enriquecido, imágenes ni tablas. Si necesitas títulos, enlaces o estilos, usa Markdown a PDF o HTML a PDF.',
+    },
+  },
+
+  'webp-to-pdf': {
+    en: {
+      intro:
+        'Convert WebP images into a PDF document that is easier to print, archive or share with people whose devices do not support WebP well. Upload one image or combine several WebP files into a single PDF with your chosen page size, orientation and margins.',
+      useCases: [
+        { title: 'Share WebP images as a universal file', description: 'Package modern WebP images as a PDF that opens reliably on phones, desktops and document portals.' },
+        { title: 'Create a printable image set', description: 'Turn downloaded WebP graphics, receipts or screenshots into a print-ready PDF.' },
+        { title: 'Submit images to PDF-only forms', description: 'Many application portals accept PDFs but reject WebP uploads.' },
+        { title: 'Archive web images', description: 'Store a group of WebP assets in one document while preserving visual quality.' },
+      ],
+      faqs: [
+        { question: 'Can I convert multiple WebP files at once?', answer: 'Yes. Upload several WebP images and each one becomes a page in the final PDF.' },
+        { question: 'Does WebP to PDF reduce quality?', answer: 'The image is embedded at high quality. Final appearance depends on the original WebP resolution and the page size you choose.' },
+        { question: 'Can I set A4 or Letter page size?', answer: 'Yes. Choose Auto, A4, Letter or Legal, plus portrait or landscape orientation.' },
+        { question: 'Will animated WebP files stay animated?', answer: 'No. PDF pages are static, so animated WebP files are converted using a still frame.' },
+        { question: 'Are WebP files deleted after conversion?', answer: 'Yes. Uploaded images are processed temporarily and automatically deleted within 30 minutes.' },
+      ],
+      limitations: 'PDF is a static document format, so animation is not preserved. Very small WebP images may look pixelated if stretched to a large page size.',
+    },
+    es: {
+      intro:
+        'Convierte imágenes WebP en un documento PDF más fácil de imprimir, archivar o compartir con personas cuyos dispositivos no manejan bien WebP. Sube una imagen o combina varios archivos WebP en un único PDF con el tamaño de página, orientación y márgenes que elijas.',
+      useCases: [
+        { title: 'Compartir WebP como archivo universal', description: 'Empaqueta imágenes WebP modernas como PDF para que se abran bien en móviles, ordenadores y portales.' },
+        { title: 'Crear un conjunto imprimible', description: 'Convierte gráficos, recibos o capturas WebP descargadas en un PDF listo para imprimir.' },
+        { title: 'Enviar imágenes a formularios que solo aceptan PDF', description: 'Muchos portales aceptan PDFs pero rechazan subidas en WebP.' },
+        { title: 'Archivar imágenes web', description: 'Guarda un grupo de recursos WebP en un solo documento conservando la calidad visual.' },
+      ],
+      faqs: [
+        { question: '¿Puedo convertir varios WebP a la vez?', answer: 'Sí. Sube varias imágenes WebP y cada una será una página del PDF final.' },
+        { question: '¿WebP a PDF reduce la calidad?', answer: 'La imagen se incrusta con alta calidad. El resultado depende de la resolución original y del tamaño de página elegido.' },
+        { question: '¿Puedo elegir A4 o Carta?', answer: 'Sí. Puedes elegir Auto, A4, Carta o Legal, además de orientación vertical u horizontal.' },
+        { question: '¿Los WebP animados siguen animados?', answer: 'No. Las páginas PDF son estáticas, por lo que los WebP animados se convierten usando un fotograma fijo.' },
+        { question: '¿Se eliminan los WebP tras convertir?', answer: 'Sí. Las imágenes se procesan temporalmente y se eliminan automáticamente en 30 minutos.' },
+      ],
+      limitations: 'PDF es un formato de documento estático, así que no conserva animaciones. Las imágenes WebP muy pequeñas pueden verse pixeladas si se estiran a una página grande.',
+    },
+  },
+
+  'ocr-pdf': {
+    en: {
+      intro:
+        'Run OCR on scanned PDF files so their text becomes searchable and selectable. FlowToPDF reads the page images, recognises printed text and creates a PDF that is easier to search, copy and organise while keeping the original page appearance.',
+      useCases: [
+        { title: 'Make scanned contracts searchable', description: 'Add a text layer so you can find names, clauses and dates with search.' },
+        { title: 'Digitise receipts and paperwork', description: 'Convert paper scans into PDFs that are easier to file and retrieve later.' },
+        { title: 'Prepare documents for review', description: 'Make scanned pages selectable before sending them to colleagues or legal teams.' },
+        { title: 'Improve document accessibility', description: 'A searchable text layer helps PDF readers and indexing tools understand the content.' },
+      ],
+      faqs: [
+        { question: 'What does OCR mean?', answer: 'OCR stands for Optical Character Recognition. It detects text inside scanned images and adds machine-readable text to the PDF.' },
+        { question: 'Which languages are supported?', answer: 'The OCR tool supports English, Spanish, French, German, Portuguese and Italian.' },
+        { question: 'Will OCR change how my PDF looks?', answer: 'The visual pages stay the same. OCR adds a text layer so the PDF becomes searchable and selectable.' },
+        { question: 'How accurate is OCR?', answer: 'Accuracy depends on scan quality, contrast, page rotation and font clarity. Clean printed text works best.' },
+        { question: 'Can OCR read handwriting?', answer: 'Handwriting recognition is unreliable. This tool is designed primarily for printed or typed text.' },
+      ],
+      limitations: 'OCR quality depends on the source scan. Blurry pages, low contrast, handwriting and complex layouts may produce incomplete or incorrect text.',
+    },
+    es: {
+      intro:
+        'Aplica OCR a archivos PDF escaneados para que su texto sea buscable y seleccionable. FlowToPDF lee las imágenes de las páginas, reconoce texto impreso y crea un PDF más fácil de buscar, copiar y organizar manteniendo la apariencia original.',
+      useCases: [
+        { title: 'Hacer buscables contratos escaneados', description: 'Añade una capa de texto para encontrar nombres, cláusulas y fechas con el buscador.' },
+        { title: 'Digitalizar recibos y documentos', description: 'Convierte escaneos en PDFs más fáciles de archivar y recuperar después.' },
+        { title: 'Preparar documentos para revisión', description: 'Haz seleccionables las páginas escaneadas antes de enviarlas a compañeros o equipos legales.' },
+        { title: 'Mejorar la accesibilidad', description: 'Una capa de texto ayuda a lectores PDF y herramientas de indexación a entender el contenido.' },
+      ],
+      faqs: [
+        { question: '¿Qué significa OCR?', answer: 'OCR significa Reconocimiento Óptico de Caracteres. Detecta texto dentro de imágenes escaneadas y añade texto legible por máquina al PDF.' },
+        { question: '¿Qué idiomas admite?', answer: 'La herramienta OCR admite inglés, español, francés, alemán, portugués e italiano.' },
+        { question: '¿El OCR cambia el aspecto del PDF?', answer: 'Las páginas visuales se mantienen igual. El OCR añade una capa de texto para que el PDF sea buscable y seleccionable.' },
+        { question: '¿Qué precisión tiene el OCR?', answer: 'Depende de la calidad del escaneo, contraste, rotación y claridad de la fuente. El texto impreso limpio funciona mejor.' },
+        { question: '¿Puede leer escritura a mano?', answer: 'El reconocimiento de escritura a mano no es fiable. Esta herramienta está pensada principalmente para texto impreso o mecanografiado.' },
+      ],
+      limitations: 'La calidad del OCR depende del escaneo original. Páginas borrosas, bajo contraste, escritura a mano y diseños complejos pueden producir texto incompleto o incorrecto.',
+    },
+  },
 };
 
 /**

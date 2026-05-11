@@ -101,6 +101,19 @@ const pageMeta: Record<string, PageMeta> = {
         'Convierte imágenes PNG a PDF gratis online. Convierte varios PNG a la vez. Rápido y seguro.',
     },
   },
+  'webp-to-pdf': {
+    slug: { en: 'webp-to-pdf', es: 'webp-a-pdf' },
+    en: {
+      title: 'WebP to PDF Converter - Free Online | FlowToPDF',
+      description:
+        'Convert WebP images to PDF online for free. Combine multiple WebP files, choose page size and download a clean PDF.',
+    },
+    es: {
+      title: 'Convertir WebP a PDF gratis online | FlowToPDF',
+      description:
+        'Convierte imagenes WebP a PDF gratis online. Combina varios WebP, elige tamano de pagina y descarga tu PDF.',
+    },
+  },
   'pdf-to-jpg': {
     slug: { en: 'pdf-to-jpg', es: 'pdf-a-jpg' },
     en: {
@@ -125,6 +138,19 @@ const pageMeta: Record<string, PageMeta> = {
       title: 'Convertir PDF a PNG gratis online | FlowToPDF',
       description:
         'Convierte páginas de PDF a imágenes PNG gratis online. Alta calidad, sin marcas de agua.',
+    },
+  },
+  'text-to-pdf': {
+    slug: { en: 'text-to-pdf', es: 'texto-a-pdf' },
+    en: {
+      title: 'Text to PDF Converter - Free Online | FlowToPDF',
+      description:
+        'Convert plain text files to PDF online for free. Choose page size and margins, then download a clean printable PDF.',
+    },
+    es: {
+      title: 'Convertir Texto a PDF gratis online | FlowToPDF',
+      description:
+        'Convierte archivos de texto plano a PDF gratis online. Elige tamano de pagina y margenes para descargar un PDF limpio.',
     },
   },
   'merge-pdf': {
@@ -287,12 +313,12 @@ export function generateMetaTags(page: string, lang: Lang): MetaTags {
   const localeMeta = meta[lang] ?? meta['en'];
   const slug = meta.slug[lang] ?? meta.slug['en'];
 
-  const langPath = `/${lang}/${slug}`.replace(/\/$/, '') || `/${lang}`;
+  const langPath = slug ? `/${lang}/${slug}/` : `/${lang}/`;
   const canonical = `${SITE_URL}${langPath}`;
 
   const alternateLang: Lang = lang === 'en' ? 'es' : 'en';
   const altSlug = meta.slug[alternateLang] ?? meta.slug['en'];
-  const altPath = `/${alternateLang}/${altSlug}`.replace(/\/$/, '') || `/${alternateLang}`;
+  const altPath = altSlug ? `/${alternateLang}/${altSlug}/` : `/${alternateLang}/`;
   const altHref = `${SITE_URL}${altPath}`;
 
   return {

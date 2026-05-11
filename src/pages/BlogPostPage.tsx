@@ -42,12 +42,26 @@ export default function BlogPostPage() {
   }).format(new Date(post.date));
 
   const meta = generateMetaTags('blog', lang);
+  const canonical = `https://flowtopdf.com/${lang}/blog/${post.slug}/`;
+  const alternatePosts = lang === 'en' ? blogPostsEs : blogPostsEn;
+  const alternatePost = alternatePosts.find((candidate) => candidate.relatedTools?.[0] === post.relatedTools?.[0]);
+  const alternateLang = lang === 'en' ? 'es' : 'en';
+  const alternateHref = alternatePost
+    ? `https://flowtopdf.com/${alternateLang}/blog/${alternatePost.slug}/`
+    : `https://flowtopdf.com/${alternateLang}/blog/`;
   const postMeta = {
     ...meta,
     title: `${post.title} | FlowToPDF Blog`,
     description: post.excerpt,
+    canonical,
     ogTitle: post.title,
     ogDescription: post.excerpt,
+    ogUrl: canonical,
+    alternates: [
+      { hreflang: lang, href: canonical },
+      { hreflang: alternateLang, href: alternateHref },
+      { hreflang: 'x-default', href: lang === 'en' ? canonical : alternateHref },
+    ],
   };
 
   const htmlContent = parseMarkdownToHtml(post.content);

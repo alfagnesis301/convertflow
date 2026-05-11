@@ -11,6 +11,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "tsc && vite build && tsx scripts/prerender.mts",
     "build:server": "tsc -p tsconfig.server.json",
+    "audit:seo": "tsx scripts/seo-audit.mts",
     "start": "node dist/server/index.js",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

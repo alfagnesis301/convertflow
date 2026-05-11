@@ -72,9 +72,38 @@ The frontend will be available at **http://localhost:3000** and the API at **htt
 |--------------------|----------------------------------------------------------|
 | `npm run dev`      | Start frontend (Vite) + backend (tsx watch) concurrently |
 | `npm run build`    | Build frontend and compile server TypeScript             |
+| `npm run audit:seo` | Audit generated or live indexable URLs for SEO readiness |
 | `npm start`        | Run the compiled production server                       |
 | `npm run server:dev` | Start only the backend in watch mode                   |
 | `npm run client`   | Start only the Vite dev server                           |
+
+---
+
+## Search Console Deployment Checklist
+
+Use a Google Search Console **Domain property** for `flowtopdf.com`, verified through DNS. After publishing a build, submit:
+
+```text
+https://flowtopdf.com/sitemap.xml
+```
+
+Then inspect and request indexing for these representative URLs:
+
+- `https://flowtopdf.com/`
+- `https://flowtopdf.com/en/text-to-pdf/`
+- `https://flowtopdf.com/en/webp-to-pdf/`
+- `https://flowtopdf.com/en/blog/merge-multiple-pdfs-guide/`
+- `https://flowtopdf.com/es/ocr-pdf/`
+
+In **Page indexing**, monitor `Crawled - currently not indexed`, `Discovered - currently not indexed`, `Duplicate`, `Alternate page with proper canonical tag`, and `Soft 404`. If one appears, run:
+
+```bash
+npm run build:client
+npm run audit:seo
+npm run audit:seo -- --base=https://flowtopdf.com
+```
+
+The prerender step generates static HTML, canonical/hreflang tags, `sitemap.xml`, `robots.txt`, and Netlify `_redirects`. Keep public indexable pages in the prerender route list so Google never receives the generic SPA fallback as primary content.
 
 ---
 
@@ -147,8 +176,8 @@ The files are plain JSON objects with nested keys. Edit them directly. The `t()`
 2. **Add locale strings** for the tool name and description to `src/locales/en.json` and `src/locales/es.json` under the `tools` key.
 3. **Add the conversion route** in `server/routes/convert.ts` — add a new `case` to the switch statement with the key `'sourceFormat→targetFormat'`.
 4. **Implement the conversion logic** in the appropriate service file (`pdfService.ts`, `imageService.ts`, or `documentService.ts`), or create a new service.
-5. **Add SEO metadata** for the new tool in `src/lib/seo.ts` under `pageMeta`.
-6. **Add sitemap entries** in `public/sitemap.xml`.
+5. **Add SEO metadata** for the new tool in `src/lib/seo.ts` under `pageMeta` when the client-side title/description needs custom copy.
+6. **Add rich SEO content** in `src/lib/toolSeoContent.ts` when the tool is important enough to rank with unique copy, FAQs and use cases. The prerender script generates sitemap entries automatically from indexable routes.
 
 ---
 

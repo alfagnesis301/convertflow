@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /uploads/
+Disallow: /processing/
+Disallow: /download/
+
 Sitemap: https://flowtopdf.com/sitemap.xml

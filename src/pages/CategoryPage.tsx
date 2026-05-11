@@ -114,7 +114,31 @@ export default function CategoryPage({ categoryId: propCategoryId }: CategoryPag
   const pageTitle = meta[lang].title;
   const pageDesc = meta[lang].desc;
   const generatedMeta = generateMetaTags('home', lang);
-  const finalMeta = { ...generatedMeta, title: pageTitle, description: pageDesc, ogTitle: pageTitle, ogDescription: pageDesc, twitterTitle: pageTitle, twitterDescription: pageDesc };
+  const categorySlug: Record<ToolCategory, { en: string; es: string }> = {
+    'pdf-converter': { en: 'pdf-converter', es: 'convertidor-pdf' },
+    'image-to-pdf': { en: 'image-to-pdf', es: 'imagen-a-pdf' },
+    'pdf-tools': { en: 'pdf-tools', es: 'herramientas-pdf' },
+    'office-to-pdf': { en: 'office-to-pdf', es: 'office-a-pdf' },
+  };
+  const canonical = `https://flowtopdf.com/${lang}/${categorySlug[categoryId][lang]}/`;
+  const alternateLang = lang === 'en' ? 'es' : 'en';
+  const alternate = `https://flowtopdf.com/${alternateLang}/${categorySlug[categoryId][alternateLang]}/`;
+  const finalMeta = {
+    ...generatedMeta,
+    title: pageTitle,
+    description: pageDesc,
+    canonical,
+    ogTitle: pageTitle,
+    ogDescription: pageDesc,
+    ogUrl: canonical,
+    twitterTitle: pageTitle,
+    twitterDescription: pageDesc,
+    alternates: [
+      { hreflang: lang, href: canonical },
+      { hreflang: alternateLang, href: alternate },
+      { hreflang: 'x-default', href: `https://flowtopdf.com/en/${categorySlug[categoryId].en}/` },
+    ],
+  };
 
   const categoryTools = getToolsByCategory(categoryId);
   const title = categoryTitles[categoryId][lang];

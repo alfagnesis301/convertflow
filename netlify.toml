@@ -1,16 +1,36 @@
 [build]
-  command   = "npm run build:client"
-  publish   = "dist/client"
+  command = "npm run build:client"
+  publish = "dist/client"
 
-# Proxy all /api/* requests to the Koyeb backend
+# Canonical host and protocol.
 [[redirects]]
-  from   = "/api/*"
-  to     = "https://convertflow-jir8.onrender.com/api/:splat"
-  status = 200
-  force  = true
+  from = "http://flowtopdf.com/*"
+  to = "https://flowtopdf.com/:splat"
+  status = 301
+  force = true
 
-# SPA fallback — all other routes serve index.html
 [[redirects]]
-  from   = "/*"
-  to     = "/index.html"
+  from = "http://www.flowtopdf.com/*"
+  to = "https://flowtopdf.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.flowtopdf.com/*"
+  to = "https://flowtopdf.com/:splat"
+  status = 301
+  force = true
+
+# Proxy all /api/* requests to the backend.
+[[redirects]]
+  from = "/api/*"
+  to = "https://convertflow-jir8.onrender.com/api/:splat"
   status = 200
+  force = true
+
+# The prerender step writes route-specific slash redirects to dist/client/_redirects.
+# Unknown URLs should return 404 instead of the generic SPA shell to avoid soft 404s.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
