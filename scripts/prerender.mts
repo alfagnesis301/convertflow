@@ -544,11 +544,6 @@ function writeRedirects(routes: RouteMeta[]): void {
     '/en/cookies/ /en/cookie-policy/ 301!',
     '/es/politica-cookies/ /es/politica-de-cookies/ 301!',
   ];
-  for (const route of routes) {
-    if (route.url !== '/' && route.url.endsWith('/')) {
-      redirects.push(`${route.url.slice(0, -1)} ${route.url} 301!`);
-    }
-  }
   redirects.push('/api/* https://convertflow-jir8.onrender.com/api/:splat 200!');
   redirects.push('/* /404.html 404');
   fs.writeFileSync(path.join(DIST, '_redirects'), `${redirects.join('\n')}\n`, 'utf-8');
