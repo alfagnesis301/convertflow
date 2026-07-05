@@ -219,48 +219,12 @@ export default function ToolPage({ toolSlug: propSlug, lang: propLang }: ToolPag
       ? toolFaqsRaw.map((f) => ({ question: f.q, answer: f.a }))
       : genericFaqs;
 
-  // HowTo JSON-LD structured data
-  const howToJsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'HowTo',
-    name: lang === 'en' ? `How to use ${toolName}` : `Cómo usar ${toolName}`,
-    description: toolDesc,
-    step: [
-      {
-        '@type': 'HowToStep',
-        position: 1,
-        name: lang === 'en' ? 'Upload your file' : 'Sube tu archivo',
-        text: lang === 'en'
-          ? `Select your file by clicking the upload area or dragging it into the ${toolName} tool.`
-          : `Selecciona tu archivo haciendo clic en el área de subida o arrastrándolo a la herramienta ${toolName}.`,
-      },
-      {
-        '@type': 'HowToStep',
-        position: 2,
-        name: lang === 'en' ? 'Adjust options' : 'Ajusta las opciones',
-        text: lang === 'en'
-          ? 'Set any available options to customize your output, then click Convert Now.'
-          : 'Configura las opciones disponibles para personalizar tu resultado y haz clic en Convertir ahora.',
-      },
-      {
-        '@type': 'HowToStep',
-        position: 3,
-        name: lang === 'en' ? 'Download' : 'Descarga',
-        text: lang === 'en'
-          ? 'Click the Download button to save your converted file. Files are deleted automatically after 30 minutes.'
-          : 'Haz clic en el botón Descargar para guardar tu archivo convertido. Los archivos se eliminan automáticamente en 30 minutos.',
-      },
-    ],
-  });
+  // Note: HowTo and FAQPage JSON-LD are emitted once per page in the prerender
+  // <head> (scripts/prerender.mts) to avoid duplicate structured data after hydration.
 
   return (
     <>
       <SEOHead meta={meta} />
-      {/* HowTo JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: howToJsonLd }}
-      />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Breadcrumbs />
 

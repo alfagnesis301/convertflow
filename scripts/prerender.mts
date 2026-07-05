@@ -11,6 +11,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as toolsConfigMod from '../src/lib/toolsConfig.ts';
 import * as toolSeoMod from '../src/lib/toolSeoContent.ts';
+import * as categorySeoMod from '../src/lib/categorySeoContent.ts';
 import * as blogEnMod from '../src/content/blog.en.ts';
 import * as blogEsMod from '../src/content/blog.es.ts';
 import enLocale from '../src/locales/en.json' with { type: 'json' };
@@ -18,6 +19,7 @@ import esLocale from '../src/locales/es.json' with { type: 'json' };
 
 type ToolsConfigModule = typeof import('../src/lib/toolsConfig');
 type ToolSeoModule = typeof import('../src/lib/toolSeoContent');
+type CategorySeoModule = typeof import('../src/lib/categorySeoContent');
 type BlogModule = typeof import('../src/content/blog.en');
 type Lang = 'en' | 'es';
 
@@ -45,6 +47,8 @@ const toolsConfig = ((toolsConfigMod as unknown as { default?: ToolsConfigModule
   ?? (toolsConfigMod as unknown as ToolsConfigModule));
 const toolSeo = ((toolSeoMod as unknown as { default?: ToolSeoModule }).default
   ?? (toolSeoMod as unknown as ToolSeoModule));
+const categorySeo = ((categorySeoMod as unknown as { default?: CategorySeoModule }).default
+  ?? (categorySeoMod as unknown as CategorySeoModule));
 const blogEn = ((blogEnMod as unknown as { default?: BlogModule }).default
   ?? (blogEnMod as unknown as BlogModule));
 const blogEs = ((blogEsMod as unknown as { default?: BlogModule }).default
@@ -52,6 +56,7 @@ const blogEs = ((blogEsMod as unknown as { default?: BlogModule }).default
 
 const { tools, categories } = toolsConfig;
 const { getToolSeoContent } = toolSeo;
+const { getCategorySeoContent } = categorySeo;
 const blogPostsEn = blogEn.blogPostsEn ?? [];
 const blogPostsEs = blogEs.blogPostsEs ?? [];
 
@@ -146,6 +151,12 @@ function seoForTool(toolId: string, lang: Lang): SeoSection {
       ? 'Very large, damaged or password-protected files may need to be split, repaired or unlocked before processing.'
       : 'Los archivos muy grandes, danados o protegidos con contrasena pueden necesitar dividirse, repararse o desbloquearse antes.'),
   };
+}
+
+function homeFaqs(lang: Lang): { question: string; answer: string }[] {
+  const home = (localeByLang[lang].home as Record<string, unknown>) ?? {};
+  const items = Array.isArray(home.faqItems) ? (home.faqItems as { q: string; a: string }[]) : [];
+  return items.map((item) => ({ question: item.q, answer: item.a }));
 }
 
 function siteHeader(lang: Lang): string {
@@ -244,6 +255,32 @@ function toolBody(toolId: string, lang: Lang): string {
     <p>${en ? 'The interactive uploader loads here in the browser after the SEO content.' : 'El cargador interactivo se carga aqui en el navegador despues del contenido SEO.'}</p>
   </section>
 </main>${siteFooter(lang)}`;
+}
+
+function categoryBody(
+  categoryId: string,
+  lang: Lang,
+  title: string,
+  desc: string,
+  catTools: (typeof tools),
+): string {
+  const en = lang === 'en';
+  const seo = getCategorySeoContent(categoryId, lang);
+  const toolList = catTools
+    .map((tool) => `<li><a href="/${lang}/${tool.slug[lang]}/">${escapeHtml(localeTool(tool.id, lang).name)}</a> - ${escapeHtml(localeTool(tool.id, lang).desc)}</li>`)
+    .join('');
+
+  const seoBlock = seo
+    ? `<section style="margin-top:2.5rem;max-width:760px"><p style="font-size:1.05rem;line-height:1.7;color:#4b5563">${escapeHtml(seo.intro)}</p></section>
+  <section style="margin-top:2rem"><h2>${en ? 'Why use these tools' : 'Por que usar estas herramientas'}</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem">
+    ${seo.whyUse.map((uc) => `<article style="border:1px solid #e5e7eb;border-radius:.5rem;padding:1rem"><h3 style="font-size:1rem;margin:.1rem 0 .4rem;color:#111827">${escapeHtml(uc.title)}</h3><p style="margin:0;color:#6b7280;font-size:.92rem;line-height:1.55">${escapeHtml(uc.description)}</p></article>`).join('')}
+  </div></section>
+  <section style="margin-top:2.5rem"><h2>${en ? 'Frequently asked questions' : 'Preguntas frecuentes'}</h2>
+    ${seo.faqs.map((faq) => `<details style="border-bottom:1px solid #e5e7eb;padding:1rem 0"><summary style="font-weight:700;color:#111827">${escapeHtml(faq.question)}</summary><p style="color:#4b5563;line-height:1.6">${escapeHtml(faq.answer)}</p></details>`).join('')}
+  </section>`
+    : '';
+
+  return `${siteHeader(lang)}<main style="max-width:960px;margin:0 auto;padding:2.5rem 1.5rem;font-family:Inter,system-ui,sans-serif;color:#1f2937"><h1>${escapeHtml(title)}</h1><p style="font-size:1.125rem;color:#4b5563">${escapeHtml(desc)}</p><ul>${toolList}</ul>${seoBlock}</main>${siteFooter(lang)}`;
 }
 
 function faqJsonLd(faqs: { question: string; answer: string }[]): string {
@@ -367,6 +404,7 @@ function buildRoutes(): RouteMeta[] {
     title: 'FlowToPDF - Free Online PDF Tools',
     description: 'Free online PDF tools to convert, merge, split, compress, rotate and OCR files. No account required.',
     body: homeBody('en', true),
+    jsonLd: homeFaqs('en').length ? [faqJsonLd(homeFaqs('en'))] : undefined,
     changefreq: 'weekly',
     priority: '1.0',
   }];
@@ -383,6 +421,7 @@ function buildRoutes(): RouteMeta[] {
         ? 'Free online PDF tools to convert, merge, split, compress, rotate and OCR files. No account required.'
         : 'Herramientas PDF gratis para convertir, unir, dividir, comprimir, rotar y aplicar OCR. Sin registro.',
       body: homeBody(lang),
+      jsonLd: homeFaqs(lang).length ? [faqJsonLd(homeFaqs(lang))] : undefined,
       changefreq: 'weekly',
       priority: '1.0',
     });
@@ -399,6 +438,7 @@ function buildRoutes(): RouteMeta[] {
     for (const lang of ['en', 'es'] as const) {
       const data = categoryMeta[category.id][lang];
       const catTools = tools.filter((tool) => tool.available && tool.category === category.id && tool.id !== 'image-to-pdf');
+      const catSeo = getCategorySeoContent(category.id, lang);
       routes.push({
         out: `${lang}/${data[0]}/index.html`,
         url: `/${lang}/${data[0]}/`,
@@ -406,7 +446,8 @@ function buildRoutes(): RouteMeta[] {
         alternate: { en: `/en/${categoryMeta[category.id].en[0]}/`, es: `/es/${categoryMeta[category.id].es[0]}/` },
         title: `${data[1]} | FlowToPDF`,
         description: data[2],
-        body: `${siteHeader(lang)}<main style="max-width:960px;margin:0 auto;padding:2.5rem 1.5rem;font-family:Inter,system-ui,sans-serif"><h1>${data[1]}</h1><p>${data[2]}</p><ul>${catTools.map((tool) => `<li><a href="/${lang}/${tool.slug[lang]}/">${escapeHtml(localeTool(tool.id, lang).name)}</a> - ${escapeHtml(localeTool(tool.id, lang).desc)}</li>`).join('')}</ul></main>${siteFooter(lang)}`,
+        body: categoryBody(category.id, lang, data[1], data[2], catTools),
+        jsonLd: catSeo ? [faqJsonLd(catSeo.faqs)] : undefined,
         changefreq: 'monthly',
         priority: '0.8',
       });

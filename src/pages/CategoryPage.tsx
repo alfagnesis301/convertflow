@@ -2,9 +2,11 @@ import { useParams, Navigate } from 'react-router-dom';
 import { useTranslation } from '../lib/i18n';
 import { tools, getToolsByCategory, type ToolCategory } from '../lib/toolsConfig';
 import { generateMetaTags } from '../lib/seo';
+import { getCategorySeoContent } from '../lib/categorySeoContent';
 import SEOHead from '../components/SEOHead';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ToolGrid from '../components/ToolGrid';
+import FAQSection from '../components/FAQSection';
 
 interface CategoryPageProps {
   categoryId: ToolCategory;
@@ -144,6 +146,9 @@ export default function CategoryPage({ categoryId: propCategoryId }: CategoryPag
   const title = categoryTitles[categoryId][lang];
   const desc = categoryDescriptions[categoryId][lang];
 
+  // Long-form SEO content (intro, why-use, FAQ) so the hub is not a thin page
+  const seo = getCategorySeoContent(categoryId, lang);
+
   // Unused but keeping the import clean
   void tools;
 
@@ -159,6 +164,39 @@ export default function CategoryPage({ categoryId: propCategoryId }: CategoryPag
         </div>
 
         <ToolGrid tools={categoryTools} showSearch={true} />
+
+        {/* Long-form SEO content */}
+        {seo && (
+          <div className="mt-16 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              {seo.intro}
+            </p>
+
+            <section className="mt-10">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                {lang === 'en' ? 'Why use these tools' : 'Por qué usar estas herramientas'}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {seo.whyUse.map((item, i) => (
+                  <div key={i} className="flex gap-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700">
+                    <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-600 dark:text-primary-400 flex items-center justify-center text-xs font-bold">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm mb-1">{item.title}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <FAQSection
+              faqs={seo.faqs}
+              title={lang === 'en' ? 'Frequently Asked Questions' : 'Preguntas frecuentes'}
+            />
+          </div>
+        )}
       </main>
     </>
   );
