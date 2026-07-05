@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
-import { generateStructuredData } from '../lib/seo';
 
 export interface FAQ {
   question: string;
@@ -13,23 +12,15 @@ interface FAQSectionProps {
   title?: string;
 }
 
+// Note: FAQPage JSON-LD is emitted once per page in the prerender <head>
+// (scripts/prerender.mts) to avoid duplicate structured data after hydration.
 export default function FAQSection({ faqs, title }: FAQSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
-  const jsonLd = generateStructuredData('FAQPage', {
-    items: faqs.map((f) => ({ q: f.question, a: f.answer })),
-  });
-
   return (
     <section className="py-10">
-      {/* FAQ JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLd }}
-      />
-
       {title && (
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
           {title}
